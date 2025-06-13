@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-background text-textPrimary font-sans;
+}
+
+
+/* Ocultar scroll visible pero permitir scroll funcional */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
