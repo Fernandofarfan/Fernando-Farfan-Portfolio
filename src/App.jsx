@@ -24,13 +24,14 @@ export default function App() {
         <aside className="col-span-12 md:col-span-4 sticky top-0 h-screen p-8 flex flex-col justify-between bg-background">
           <div>
             <h1 className="text-4xl font-bold leading-tight">Guillermo Fernando Farfan</h1>
-            <h2 className="text-accent text-sm mt-1">Full Stack Developer & Data Analyst</h2>
+            <h2 className="text-accent text-sm mt-1">Full Stack Developer | DBA | Data Analyst</h2>
             <p className="text-textSecondary mt-6">
-              Soy un desarrollador apasionado por construir soluciones digitales accesibles, escalables y orientadas a datos.
+              Desarrollador Full Stack y Administrador de Bases de Datos con más de 5 años de experiencia en soluciones digitales escalables y orientadas a datos.
             </p>
             <nav className="mt-10 space-y-2 text-sm uppercase tracking-widest text-textSecondary">
               <a href="#about" className="block hover:text-accent">Sobre mí</a>
               <a href="#experience" className="block hover:text-accent">Experiencia</a>
+              <a href="#education" className="block hover:text-accent">Educación</a>
               <a href="#projects" className="block hover:text-accent">Proyectos</a>
               <a href="#certifications" className="block hover:text-accent">Certificaciones</a>
               <a href="#skills" className="block hover:text-accent">Habilidades</a>
@@ -55,16 +56,16 @@ export default function App() {
           <Section id="about" title="Sobre mí">
             <div className="text-textSecondary space-y-4">
               <p>
-                Soy un desarrollador apasionado por construir soluciones digitales accesibles, escalables y orientadas a datos. Me especializo en desarrollo backend robusto, análisis de datos estratégico e ingeniería de software moderna.
+                Soy un <strong>Full Stack Developer</strong> y <strong>Administrador de Bases de Datos</strong> con más de 5 años de experiencia, especializado en desarrollo backend y administración de bases de datos en entornos críticos.
               </p>
               <p>
-                Actualmente, me desempeño como <strong>Desarrollador Full Stack Freelance</strong>, donde diseño soluciones completas: interfaces intuitivas (React, Vue.js), lógica de servidor (Node.js, Python, Java), y bases de datos (MySQL, MongoDB).
+                Mi expertise abarca el diseño e implementación de <strong>APIs RESTful y GraphQL</strong>, arquitecturas de microservicios, y la administración avanzada de bases de datos SQL y NoSQL. Consolido proyectos utilizando <strong>Node.js, Java/Spring Boot, .NET y Python</strong>, apoyados en infraestructura cloud y prácticas DevOps.
               </p>
               <p>
-                Además, colaboro con instituciones académicas y organismos públicos en la gestión de datos, automatización de reportes y capacitación técnica en SQL y administración de bases.
+                Actualmente, me desempeño como <strong>Desarrollador Full Stack Freelance</strong>, donde diseño soluciones completas: interfaces intuitivas con React y Vue.js, lógica de servidor robusta, y administración de bases de datos con foco en rendimiento, seguridad y escalabilidad.
               </p>
               <p>
-                He trabajado en entornos educativos, administrativos y tecnológicos como la <strong>UBA</strong>, el <strong>Gobierno de la Ciudad de Buenos Aires</strong> y <strong>Coderhouse</strong>. Esta experiencia me permitió liderar proyectos ágiles y multidisciplinarios.
+                He trabajado en entornos educativos, administrativos y tecnológicos como la <strong>UBA</strong>, el <strong>Gobierno de la Ciudad de Buenos Aires</strong>, <strong>Supra Brokers</strong> y <strong>Coderhouse</strong>. Esta experiencia me permitió liderar proyectos ágiles y multidisciplinarios, combinando desarrollo de software con gestión de datos estratégica.
               </p>
               <p>
                 A lo largo de mi carrera completé más de una docena de certificaciones internacionales (IBM, Meta, Google, Microsoft) en áreas como desarrollo full stack, DevOps, análisis de datos y cloud computing.
@@ -78,14 +79,27 @@ export default function App() {
           <Section id="experience" title="Experiencia Profesional">
             <ul className="space-y-10 text-textSecondary">
               <li>
+                <h4 className="text-lg font-semibold text-white">Technical & Digital Analyst</h4>
+                <p className="italic">Supra Brokers · Junio 2025 - Agosto 2025</p>
+                <p>Colaboración en proyectos de seguridad informática, documentación técnica de entornos y procesos de bases de datos. Automatización de flujos de trabajo y procesos ETL con SQL y Python. Gestión de incidentes y mantenimiento de plataformas de bases de datos.</p>
+                <div className="flex flex-wrap gap-2 mt-2">
+                  <span className="bg-emerald-700 px-3 py-1 text-sm rounded-full text-white">SQL</span>
+                  <span className="bg-emerald-700 px-3 py-1 text-sm rounded-full text-white">Python</span>
+                  <span className="bg-emerald-700 px-3 py-1 text-sm rounded-full text-white">ETL</span>
+                  <span className="bg-emerald-700 px-3 py-1 text-sm rounded-full text-white">Ciberseguridad</span>
+                  <span className="bg-emerald-700 px-3 py-1 text-sm rounded-full text-white">Documentación</span>
+                </div>
+              </li>
+              <li>
                 <h4 className="text-lg font-semibold text-white">Desarrollador Full Stack Freelance</h4>
                 <p className="italic">Independiente · Noviembre 2021 - Presente</p>
-                <p>Creación de interfaces con React o Vue.js, desarrollo de APIs RESTful y GraphQL, backend en Node.js, Python, Ruby, Java y PHP, integraciones de terceros, seguridad y rendimiento de APIs, y manejo de bases de datos SQL y NoSQL.</p>
+                <p>Desarrollo de aplicaciones web con Node.js, React, Spring Boot, Flask y .NET. Diseño, consumo y documentación de APIs RESTful y GraphQL. Implementación de arquitecturas backend con integración a PostgreSQL, MySQL y MongoDB. Automatización de procesos y despliegues con Python, Bash y PowerShell.</p>
                 <div className="flex flex-wrap gap-2 mt-2">
                   <span className="bg-emerald-700 px-3 py-1 text-sm rounded-full text-white">JavaScript</span>
                   <span className="bg-emerald-700 px-3 py-1 text-sm rounded-full text-white">React</span>
                   <span className="bg-emerald-700 px-3 py-1 text-sm rounded-full text-white">Vue.js</span>
                   <span className="bg-emerald-700 px-3 py-1 text-sm rounded-full text-white">Node.js</span>
+                  <span className="bg-emerald-700 px-3 py-1 text-sm rounded-full text-white">Spring Boot</span>
                   <span className="bg-emerald-700 px-3 py-1 text-sm rounded-full text-white">Python</span>
                   <span className="bg-emerald-700 px-3 py-1 text-sm rounded-full text-white">GraphQL</span>
                   <span className="bg-emerald-700 px-3 py-1 text-sm rounded-full text-white">MongoDB</span>
@@ -95,12 +109,13 @@ export default function App() {
               <li>
                 <h4 className="text-lg font-semibold text-white">Administrador DBA | Administrativo</h4>
                 <p className="italic">Universidad de Buenos Aires · Marzo 2018 - Mayo 2024</p>
-                <p>Gestión de bases de datos SQL complejas, optimización de estructuras, desarrollo de queries analíticas, y trabajo interdisciplinario para soporte institucional.</p>
+                <p>Administración y soporte de SQL Server y PostgreSQL en entornos académicos y administrativos. Mantenimiento de integridad, seguridad y disponibilidad de los datos. Implementación y monitoreo de planes de backup y restore. Generación de reportes y consultas SQL para distintas áreas. Optimización de procesos e integración con sistemas de gestión.</p>
                 <div className="flex flex-wrap gap-2 mt-2">
-                  <span className="bg-emerald-700 px-3 py-1 text-sm rounded-full text-white">SQL</span>
+                  <span className="bg-emerald-700 px-3 py-1 text-sm rounded-full text-white">SQL Server</span>
                   <span className="bg-emerald-700 px-3 py-1 text-sm rounded-full text-white">PostgreSQL</span>
                   <span className="bg-emerald-700 px-3 py-1 text-sm rounded-full text-white">MySQL</span>
                   <span className="bg-emerald-700 px-3 py-1 text-sm rounded-full text-white">Análisis de Datos</span>
+                  <span className="bg-emerald-700 px-3 py-1 text-sm rounded-full text-white">Backup/Restore</span>
                 </div>
               </li>
               <li>
@@ -143,6 +158,21 @@ export default function App() {
                   <span className="bg-emerald-700 px-3 py-1 text-sm rounded-full text-white">Excel</span>
                   <span className="bg-emerald-700 px-3 py-1 text-sm rounded-full text-white">Organización</span>
                 </div>
+              </li>
+            </ul>
+          </Section>
+
+          <Section id="education" title="Educación">
+            <ul className="space-y-6 text-textSecondary">
+              <li>
+                <h4 className="text-lg font-semibold text-white">Tecnicatura en Sistemas</h4>
+                <p className="italic">Universidad Tecnológica Nacional (UTN) · 2023 - Actualidad</p>
+                <p>Formación técnica en desarrollo de software, arquitectura de sistemas, bases de datos y metodologías ágiles.</p>
+              </li>
+              <li>
+                <h4 className="text-lg font-semibold text-white">Licenciatura en Relaciones Laborales</h4>
+                <p className="italic">Universidad de Buenos Aires (UBA) · 2016 - 2025</p>
+                <p>Formación en gestión de recursos humanos, derecho laboral y administración organizacional.</p>
               </li>
             </ul>
           </Section>
@@ -190,6 +220,21 @@ export default function App() {
                 <p>Aptitudes: JavaScript, React, Node.js, Flask, Python, SQL, GitHub, Docker, Kubernetes</p>
               </li>
               <li>
+                <h4 className="text-lg font-semibold">IBM Back-end JavaScript Developer</h4>
+                <p>2023</p>
+                <p>Aptitudes: Node.js, Express.js, JavaScript, APIs RESTful, MongoDB, Testing</p>
+              </li>
+              <li>
+                <h4 className="text-lg font-semibold">IBM Back-End Developer</h4>
+                <p>2023</p>
+                <p>Aptitudes: Python, Django, Flask, APIs, Bases de datos, Microservicios</p>
+              </li>
+              <li>
+                <h4 className="text-lg font-semibold">IBM Front-End Developer</h4>
+                <p>2023</p>
+                <p>Aptitudes: React, JavaScript, HTML5, CSS3, Responsive Design, UI/UX</p>
+              </li>
+              <li>
                 <h4 className="text-lg font-semibold">Meta - Desarrollador Back-End</h4>
                 <p>Junio 2023 · ID: RKT4LXWZTHV4</p>
                 <p>Aptitudes: Python, Django REST, SQL, Git, Pruebas API</p>
@@ -208,6 +253,11 @@ export default function App() {
                 <h4 className="text-lg font-semibold">.NET FullStack Developer</h4>
                 <p>Octubre 2022 · ID: 2UYKMBUZ79HJ</p>
                 <p>Aptitudes: React, .NET Framework</p>
+              </li>
+              <li>
+                <h4 className="text-lg font-semibold">Microsoft Data Analytics</h4>
+                <p>2022</p>
+                <p>Aptitudes: Power BI, Excel, SQL, Análisis de datos, Visualización</p>
               </li>
               <li>
                 <h4 className="text-lg font-semibold">Google Cloud Fundamentals</h4>
@@ -234,14 +284,16 @@ export default function App() {
                   <li>Node.js, Express.js</li>
                   <li>Python (Flask, Django)</li>
                   <li>Java (Spring Boot)</li>
-                  <li>PHP, .NET</li>
+                  <li>PHP, .NET, Ruby</li>
                 </ul>
               </div>
               <div>
                 <h4 className="text-lg font-semibold text-white">Base de Datos</h4>
                 <ul className="list-disc list-inside">
-                  <li>MySQL, PostgreSQL</li>
-                  <li>MongoDB, Firebase</li>
+                  <li>SQL Server, PostgreSQL, MySQL</li>
+                  <li>MongoDB, MongoDB Atlas</li>
+                  <li>Firebase</li>
+                  <li>Administración DBA, Tuning, HA/DR</li>
                 </ul>
               </div>
               <div>
@@ -249,15 +301,25 @@ export default function App() {
                 <ul className="list-disc list-inside">
                   <li>Git, GitHub, GitLab</li>
                   <li>Docker, Kubernetes, OpenShift</li>
-                  <li>CI/CD, Jenkins</li>
+                  <li>CI/CD, Jenkins, GitHub Actions</li>
                 </ul>
               </div>
               <div>
                 <h4 className="text-lg font-semibold text-white">Data & QA</h4>
                 <ul className="list-disc list-inside">
                   <li>Python (pandas, NumPy, Matplotlib)</li>
-                  <li>R, SQL Avanzado</li>
+                  <li>R, SQL Avanzado, T-SQL</li>
                   <li>TDD / BDD, API Testing</li>
+                  <li>Power BI, ETL</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-lg font-semibold text-white">Automatización & Herramientas</h4>
+                <ul className="list-disc list-inside">
+                  <li>PowerShell, Bash, Python Scripts</li>
+                  <li>Jira, Trello</li>
+                  <li>Teams, SharePoint, Outlook</li>
+                  <li>TeamViewer</li>
                 </ul>
               </div>
             </div>
