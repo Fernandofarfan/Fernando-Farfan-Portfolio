@@ -37,6 +37,9 @@ export const translations = {
             light: "Modo Claro",
             dark: "Modo Oscuro"
         },
+        footer: {
+            rights: "Todos los derechos reservados."
+        },
         scrollTop: "Volver arriba",
         projects: {
             viewDemo: "Ver Demo",
@@ -88,6 +91,9 @@ export const translations = {
         theme: {
             light: "Light Mode",
             dark: "Dark Mode"
+        },
+        footer: {
+            rights: "All rights reserved."
         },
         scrollTop: "Back to top",
         projects: {

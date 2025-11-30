@@ -30,6 +30,7 @@ import Certifications from "./components/Certifications";
 import Skills from "./components/Skills";
 import Testimonials from "./components/Testimonials";
 import ContactForm from "./components/ContactForm";
+import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 
 import ScrollProgress from "./components/ScrollProgress";
@@ -70,6 +71,7 @@ function AppContent() {
               <Skills skills={skills[lang]} title={t.sections.skills} />
               <Testimonials testimonials={testimonials[lang]} title={t.sections.testimonials} />
               <ContactForm t={t} />
+              <Footer t={t} />
             </motion.div>
           </AnimatePresence>
 
