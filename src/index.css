@@ -2,13 +2,114 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-background text-textPrimary font-sans;
+@layer base {
+  * {
+    transition: color 0.2s ease;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans antialiased;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-100 dark:bg-slate-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 dark:bg-slate-700 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-400 dark:bg-slate-600;
+  }
 }
 
+@layer components {
 
-/* Ocultar scroll visible pero permitir scroll funcional */
-::-webkit-scrollbar {
-  width: 0px;
-  background: transparent;
+  /* Minimal Card */
+  .glass-card {
+    @apply bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg;
+  }
+
+  .glass-card-hover {
+    @apply glass-card hover:border-slate-300 dark:hover:border-slate-700 transition-colors duration-200;
+  }
+
+  /* Simple Text Styles */
+  .gradient-text {
+    @apply text-primary-600 dark:text-primary-400;
+  }
+
+  .gradient-text-accent {
+    @apply text-slate-700 dark:text-slate-300;
+  }
+
+  /* Minimal Button */
+  .btn-modern {
+    @apply px-4 py-2 rounded-md font-medium transition-colors duration-200;
+  }
+
+  .btn-primary {
+    @apply btn-modern bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 text-white;
+  }
+
+  .btn-secondary {
+    @apply btn-modern bg-slate-200 hover:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-900 dark:text-slate-100;
+  }
+
+  /* Tag Minimal */
+  .tag-modern {
+    @apply bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm px-2 py-1 rounded;
+  }
+
+  /* Section Container */
+  .section-container {
+    @apply mb-16;
+  }
+
+  /* Card Minimal */
+  .card-modern {
+    @apply glass-card p-6 hover:border-slate-300 dark:hover:border-slate-700 transition-colors duration-200;
+  }
+}
+
+/* Minimal Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+.overflow-wrap-anywhere {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Animation Delays */
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
 }

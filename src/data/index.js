@@ -4,3 +4,5 @@ export * from './education';
 export * from './projects';
 export * from './certifications';
 export * from './skills';
+export * from './translations';
+export * from './testimonials';

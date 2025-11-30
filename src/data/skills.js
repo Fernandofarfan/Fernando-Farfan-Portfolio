@@ -15,7 +15,7 @@ export const skills = {
                 "Node.js, Express.js",
                 "Python (Flask, Django)",
                 "Java (Spring Boot)",
-                "PHP, .NET, Ruby"
+                "PHP, .NET, ASP.NET, Ruby"
             ]
         },
         {
@@ -41,16 +41,16 @@ export const skills = {
                 "Python (pandas, NumPy, Matplotlib)",
                 "R, SQL Avanzado, T-SQL",
                 "TDD / BDD, API Testing",
-                "Power BI, ETL"
+                "Power BI, Looker Studio, ETL"
             ]
         },
         {
             category: "Automatización & Herramientas",
             items: [
                 "PowerShell, Bash, Python Scripts",
+                "Power Automate, Google AppScript",
                 "Jira, Trello",
-                "Teams, SharePoint, Outlook",
-                "TeamViewer"
+                "Teams, SharePoint, Outlook"
             ]
         }
     ],
@@ -70,7 +70,7 @@ export const skills = {
                 "Node.js, Express.js",
                 "Python (Flask, Django)",
                 "Java (Spring Boot)",
-                "PHP, .NET, Ruby"
+                "PHP, .NET, ASP.NET, Ruby"
             ]
         },
         {
@@ -96,16 +96,16 @@ export const skills = {
                 "Python (pandas, NumPy, Matplotlib)",
                 "R, Advanced SQL, T-SQL",
                 "TDD / BDD, API Testing",
-                "Power BI, ETL"
+                "Power BI, Looker Studio, ETL"
             ]
         },
         {
             category: "Automation & Tools",
             items: [
                 "PowerShell, Bash, Python Scripts",
+                "Power Automate, Google AppScript",
                 "Jira, Trello",
-                "Teams, SharePoint, Outlook",
-                "TeamViewer"
+                "Teams, SharePoint, Outlook"
             ]
         }
     ]
