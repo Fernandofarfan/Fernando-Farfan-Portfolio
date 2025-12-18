@@ -277,7 +277,7 @@ export default function App() {
             <div className="grid grid-cols-1 gap-12">
               <div>
                 <p className="text-textSecondary mb-8 text-lg">{data.contact.description}</p>
-                <form action="https://send.pageclip.co/83aEvugDvi52U8eu3bb3L3UdW4wj9jeZ" className="pageclip-form space-y-6" method="post">
+                <form action="https://send.pageclip.co/83aEvugDvi52U8eu3bb3L3UdW4wj9jeZ?success=https://fernandofarfan.github.io/Fernando-Farfan-Portfolio/" className="pageclip-form space-y-6" method="post">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-textSecondary mb-2">{data.contact.nameLabel}</label>
