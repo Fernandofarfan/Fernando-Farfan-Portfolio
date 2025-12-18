@@ -38,6 +38,15 @@ export default function App() {
       <div className="grid grid-cols-12 max-w-6xl mx-auto">
         <aside className="col-span-12 md:col-span-4 md:sticky md:top-0 md:h-screen p-6 md:p-8 flex flex-col md:justify-between bg-background">
           <div className="text-center md:text-left">
+            <div className="inline-block mb-4">
+                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-900/30 border border-emerald-500/30 text-emerald-400 text-xs font-medium">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                    </span>
+                    Disponible para trabajar
+                </span>
+            </div>
             <h1 className="text-3xl md:text-4xl font-bold leading-tight">{profile.name}</h1>
             <h2 className="text-accent text-sm mt-1">{profile.role}</h2>
             <p className="text-textSecondary mt-6">
@@ -79,20 +88,25 @@ export default function App() {
           </Section>
 
           <Section id="experience" title="Experiencia Profesional">
-            <ul className="space-y-8 md:space-y-10 text-textSecondary">
+            <div className="relative border-l border-slate-800 ml-3 space-y-12 py-2">
               {experience.map((job, index) => (
-                <li key={index}>
-                  <h4 className="text-lg font-semibold text-white">{job.role}</h4>
-                  <p className="italic">{job.company} · {job.period}</p>
-                  <p>{job.description}</p>
-                  <div className="flex flex-wrap gap-2 mt-2">
+                <div key={index} className="ml-8 relative group">
+                  <span className="absolute -left-[41px] top-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-slate-900 border border-slate-700 group-hover:border-accent transition-colors">
+                    <span className="h-2 w-2 rounded-full bg-accent group-hover:scale-125 transition-transform"></span>
+                  </span>
+                  <h4 className="text-lg font-semibold text-white group-hover:text-accent transition-colors">{job.role}</h4>
+                  <p className="text-accent/80 text-sm mb-3 font-mono">{job.company} · {job.period}</p>
+                  <p className="text-textSecondary mb-4 leading-relaxed">{job.description}</p>
+                  <div className="flex flex-wrap gap-2">
                     {job.tags.map((tag, i) => (
-                      <span key={i} className="bg-emerald-700 px-3 py-1 text-sm rounded-full text-white">{tag}</span>
+                      <span key={i} className="bg-emerald-900/20 text-emerald-300 px-2.5 py-1 text-xs rounded-md border border-emerald-500/20">
+                        {tag}
+                      </span>
                     ))}
                   </div>
-                </li>
+                </div>
               ))}
-            </ul>
+            </div>
           </Section>
 
           <Section id="education" title="Educación">
