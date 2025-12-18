@@ -6,13 +6,13 @@ import { motion } from "framer-motion";
 const Section = ({ id, title, children }) => (
   <motion.section
     id={id}
-    className="mb-16"
+    className="mb-12 md:mb-16"
     initial={{ opacity: 0, y: 50 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.6 }}
   >
-    <h3 className="text-2xl font-semibold text-white mb-4 border-b border-slate-700 pb-2">{title}</h3>
+    <h3 className="text-xl md:text-2xl font-semibold text-white mb-4 border-b border-slate-700 pb-2">{title}</h3>
     {children}
   </motion.section>
 );
@@ -21,14 +21,14 @@ export default function App() {
   return (
     <main className="bg-background text-textPrimary font-sans min-h-screen">
       <div className="grid grid-cols-12 max-w-6xl mx-auto">
-        <aside className="col-span-12 md:col-span-4 sticky top-0 h-screen p-8 flex flex-col justify-between bg-background">
-          <div>
-            <h1 className="text-4xl font-bold leading-tight">Guillermo Fernando Farfan</h1>
+        <aside className="col-span-12 md:col-span-4 md:sticky md:top-0 md:h-screen p-6 md:p-8 flex flex-col md:justify-between bg-background">
+          <div className="text-center md:text-left">
+            <h1 className="text-3xl md:text-4xl font-bold leading-tight">Guillermo Fernando Farfan</h1>
             <h2 className="text-accent text-sm mt-1">Full Stack Developer | DBA | Data Analyst</h2>
             <p className="text-textSecondary mt-6">
               Desarrollador Full Stack y Administrador de Bases de Datos con más de 5 años de experiencia en soluciones digitales escalables y orientadas a datos.
             </p>
-            <nav className="mt-10 space-y-2 text-sm uppercase tracking-widest text-textSecondary">
+            <nav className="mt-8 md:mt-10 space-y-2 text-sm uppercase tracking-widest text-textSecondary hidden md:block">
               <a href="#about" className="block hover:text-accent">Sobre mí</a>
               <a href="#experience" className="block hover:text-accent">Experiencia</a>
               <a href="#education" className="block hover:text-accent">Educación</a>
@@ -37,11 +37,11 @@ export default function App() {
               <a href="#skills" className="block hover:text-accent">Habilidades</a>
             </nav>
           </div>
-          <div className="text-sm text-textSecondary mt-10">
+          <div className="text-sm text-textSecondary mt-8 md:mt-10 text-center md:text-left">
             <p className="text-white font-semibold">Contacto</p>
             <p>Email: <a href="mailto:fernando.farfan16@gmail.com" className="text-accent">fernando.farfan16@gmail.com</a></p>
             <p>Ubicación: Buenos Aires, Argentina</p>
-            <div className="flex items-center gap-4 pt-4">
+            <div className="flex items-center justify-center md:justify-start gap-4 pt-4">
               <a href="https://github.com/Fernandofarfan" target="_blank" className="hover:text-accent">GitHub</a>
               <a href="https://www.linkedin.com/in/guillermo-farfan" target="_blank" className="hover:text-accent">LinkedIn</a>
               <a href="https://www.instagram.com/fernando.farfan07/" target="_blank" className="hover:text-accent">Instagram</a>
@@ -52,7 +52,7 @@ export default function App() {
           </div>
         </aside>
 
-        <div className="col-span-12 md:col-span-8 p-8 space-y-20">
+        <div className="col-span-12 md:col-span-8 p-6 md:p-8 space-y-12 md:space-y-20">
           <Section id="about" title="Sobre mí">
             <div className="text-textSecondary space-y-4">
               <p>
@@ -77,7 +77,7 @@ export default function App() {
           </Section>
 
           <Section id="experience" title="Experiencia Profesional">
-            <ul className="space-y-10 text-textSecondary">
+            <ul className="space-y-8 md:space-y-10 text-textSecondary">
               <li>
                 <h4 className="text-lg font-semibold text-white">Technical & Digital Analyst</h4>
                 <p className="italic">Supra Brokers · Junio 2025 - Agosto 2025</p>
