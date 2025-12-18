@@ -8,7 +8,7 @@ export const profile = {
     github: "https://github.com/Fernandofarfan",
     linkedin: "https://www.linkedin.com/in/guillermo-farfan",
     instagram: "https://www.instagram.com/fernando.farfan07/",
-    credly: "https://www.credly.com/users/fernando-farfan"
+    credly: "https://www.credly.com/users/fernando-farfan.855a5067/badges#credly"
   },
   cvLink: "/Fernando-Farfan-Portfolio/CV-Guillermo-Fernando-Farfan.pdf"
 };
