@@ -12,6 +12,12 @@ export default function App() {
       const sections = ["about", "experience", "education", "projects", "certifications", "skills"];
       const scrollPosition = window.scrollY + 200;
 
+      // Detectar si estamos al final de la página
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
+        setActiveSection("skills");
+        return;
+      }
+
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element && element.offsetTop <= scrollPosition && (element.offsetTop + element.offsetHeight) > scrollPosition) {
