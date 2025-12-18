@@ -47,7 +47,7 @@ export default function App() {
               <a href="https://www.instagram.com/fernando.farfan07/" target="_blank" className="hover:text-accent">Instagram</a>
             </div>
             <div className="pt-6">
-              <a href="/CV-Guillermo-Fernando-Farfan.pdf" download className="px-4 py-2 bg-accent text-black font-semibold rounded hover:opacity-80 transition">Descargar CV</a>
+              <a href="CV-Guillermo-Fernando-Farfan.pdf" download className="px-4 py-2 bg-accent text-black font-semibold rounded hover:opacity-80 transition">Descargar CV</a>
             </div>
           </div>
         </aside>
