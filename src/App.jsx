@@ -55,6 +55,7 @@ export default function App() {
               <a href={profile.social.github} target="_blank" className="hover:text-accent">GitHub</a>
               <a href={profile.social.linkedin} target="_blank" className="hover:text-accent">LinkedIn</a>
               <a href={profile.social.instagram} target="_blank" className="hover:text-accent">Instagram</a>
+              <a href={profile.social.credly} target="_blank" className="hover:text-accent">Credly</a>
             </div>
             <div className="pt-6">
               <a href={profile.cvLink} download className="px-4 py-2 bg-accent text-black font-semibold rounded hover:opacity-80 transition">Descargar CV</a>
