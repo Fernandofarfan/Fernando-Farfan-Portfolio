@@ -1,15 +1,14 @@
-
 import React, { useState, useEffect } from "react";
 import "./index.css";
 import Section from "./components/Section";
-import { profile, about, experience, education, projects, certifications, skills } from "./data";
+import { profile, about, experience, education, projects, certifications, skills, testimonials } from "./data";
 
 export default function App() {
   const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["about", "experience", "education", "projects", "certifications", "skills"];
+      const sections = ["about", "experience", "education", "projects", "certifications", "testimonials", "skills"];
       const scrollPosition = window.scrollY + 200;
 
       // Detectar si estamos al final de la página
@@ -50,6 +49,7 @@ export default function App() {
               <a href="#education" className={navLinkClass('education')}>Educación</a>
               <a href="#projects" className={navLinkClass('projects')}>Proyectos</a>
               <a href="#certifications" className={navLinkClass('certifications')}>Certificaciones</a>
+              <a href="#testimonials" className={navLinkClass('testimonials')}>Testimonios</a>
               <a href="#skills" className={navLinkClass('skills')}>Habilidades</a>
             </nav>
           </div>
@@ -143,16 +143,33 @@ export default function App() {
             </ul>
           </Section>
 
+          <Section id="testimonials" title="Recomendaciones">
+            <div className="grid grid-cols-1 gap-6">
+              {testimonials.map((testimonial, index) => (
+                <div key={index} className="bg-slate-800/50 p-6 rounded-lg border border-slate-700">
+                  <p className="text-textSecondary italic mb-4">"{testimonial.quote}"</p>
+                  <div>
+                    <h4 className="text-white font-semibold">{testimonial.name}</h4>
+                    <p className="text-sm text-accent">{testimonial.role}</p>
+                    <p className="text-xs text-textSecondary mt-1">{testimonial.relation} · {testimonial.date}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Section>
+
           <Section id="skills" title="Tecnologías que manejo">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-textSecondary">
+            <div className="grid grid-cols-1 gap-8 text-textSecondary">
               {skills.map((skillGroup, index) => (
                 <div key={index}>
-                  <h4 className="text-lg font-semibold text-white">{skillGroup.category}</h4>
-                  <ul className="list-disc list-inside">
+                  <h4 className="text-lg font-semibold text-white mb-3">{skillGroup.category}</h4>
+                  <div className="flex flex-wrap gap-2">
                     {skillGroup.items.map((item, i) => (
-                      <li key={i}>{item}</li>
+                      <span key={i} className="bg-slate-800 text-accent px-3 py-1.5 rounded text-sm border border-slate-700 hover:border-accent transition-colors cursor-default">
+                        {item}
+                      </span>
                     ))}
-                  </ul>
+                  </div>
                 </div>
               ))}
             </div>
