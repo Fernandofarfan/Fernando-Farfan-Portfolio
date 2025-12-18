@@ -108,22 +108,30 @@ export default function App() {
           </Section>
 
           <Section id="projects" title="Proyectos Destacados">
-            <ul className="space-y-8 text-textSecondary">
+            <div className="grid grid-cols-1 gap-6">
               {projects.map((project, index) => (
-                <li key={index} className="group">
-                  <h4 className="text-lg font-semibold text-white group-hover:text-accent transition-colors inline-flex items-center gap-2">
-                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                <a 
+                  key={index} 
+                  href={project.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="group block bg-slate-800/40 p-6 rounded-lg border border-slate-700/50 hover:border-accent hover:bg-slate-800/80 transition-all duration-300 hover:-translate-y-1"
+                >
+                  <div className="flex justify-between items-start mb-3">
+                    <h4 className="text-lg font-semibold text-white group-hover:text-accent transition-colors">
                       {project.title}
-                    </a>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    </h4>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-textSecondary group-hover:text-accent transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
-                  </h4>
-                  <p className="mt-2">{project.description}</p>
-                  <p className="text-sm text-accent mt-2 font-mono">{project.tech}</p>
-                </li>
+                  </div>
+                  <p className="text-textSecondary text-sm mb-4 leading-relaxed">{project.description}</p>
+                  <p className="text-xs font-mono text-accent/90 bg-accent/10 inline-block px-2 py-1 rounded">
+                    {project.tech}
+                  </p>
+                </a>
               ))}
-            </ul>
+            </div>
             <div className="mt-8 text-center md:text-left">
                 <a href="https://github.com/Fernandofarfan?tab=repositories" target="_blank" rel="noopener noreferrer" className="text-white hover:text-accent underline underline-offset-4 transition-colors">
                   Ver todos los repositorios en GitHub →
@@ -174,6 +182,10 @@ export default function App() {
               ))}
             </div>
           </Section>
+
+          <footer className="text-center text-textSecondary text-sm py-8 mt-12 border-t border-slate-800">
+            <p>© {new Date().getFullYear()} {profile.name}. Todos los derechos reservados.</p>
+          </footer>
 
         </div>
       </div>
