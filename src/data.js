@@ -90,19 +90,40 @@ export const education = [
 
 export const projects = [
   {
-    title: "Plataforma de Gestión Educativa",
-    description: "Sistema web para universidades que permite administrar alumnos, materias, horarios y evaluaciones. Incluye dashboards dinámicos y reportes automatizados.",
-    tech: "React, Node.js, Express, MongoDB"
+    title: "Smart Clinic Management",
+    description: "Sistema integral de gestión clínica desarrollado con TypeScript. Permite la administración de pacientes, turnos y registros médicos con una arquitectura robusta y tipado estático.",
+    tech: "TypeScript, React, Node.js",
+    link: "https://github.com/Fernandofarfan/smart-clinic-management"
   },
   {
-    title: "Sistema de Monitoreo Financiero",
-    description: "Herramienta de visualización y análisis de indicadores económicos usando Python, Pandas y dashboards en tiempo real con Plotly y Flask.",
-    tech: "Python, Flask, Plotly, SQL"
+    title: "AI Job Matching Platform",
+    description: "Plataforma impulsada por Python que utiliza algoritmos de inteligencia artificial para conectar candidatos con oportunidades laborales ideales basándose en sus habilidades.",
+    tech: "Python, AI/ML, Pandas",
+    link: "https://github.com/Fernandofarfan/ai-job-matching-platform"
   },
   {
-    title: "App de Reservas y Gestión de Turnos",
-    description: "Aplicación moderna para clínicas y profesionales que permite agendar, gestionar disponibilidad y enviar recordatorios automáticos.",
-    tech: "Vue.js, Firebase, Tailwind CSS"
+    title: "Botanical Ecommerce",
+    description: "Tienda online completa para productos botánicos. Incluye catálogo dinámico, carrito de compras y gestión de usuarios.",
+    tech: "JavaScript, HTML5, CSS3",
+    link: "https://github.com/Fernandofarfan/botanical-ecommerce"
+  },
+  {
+    title: "Python Virtual Assistant",
+    description: "Asistente virtual de escritorio capaz de ejecutar comandos de sistema, búsquedas web y automatización de tareas cotidianas.",
+    tech: "Python, Automation, Speech Recognition",
+    link: "https://github.com/Fernandofarfan/python-virtual-assistant"
+  },
+  {
+    title: "E-learning Marketplace",
+    description: "Plataforma educativa para la publicación y consumo de cursos en línea, con interfaz moderna y responsiva.",
+    tech: "HTML5, CSS3, JavaScript",
+    link: "https://github.com/Fernandofarfan/elearning-marketplace"
+  },
+  {
+    title: "Little Lemon Restaurant",
+    description: "Aplicación web para la gestión de reservas y visualización de menú de un restaurante.",
+    tech: "Python, Django/Flask",
+    link: "https://github.com/Fernandofarfan/little-lemon-restaurant"
   }
 ];
 

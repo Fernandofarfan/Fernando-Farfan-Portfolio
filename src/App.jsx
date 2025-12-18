@@ -78,15 +78,27 @@ export default function App() {
           </Section>
 
           <Section id="projects" title="Proyectos Destacados">
-            <ul className="space-y-6 text-textSecondary">
+            <ul className="space-y-8 text-textSecondary">
               {projects.map((project, index) => (
-                <li key={index}>
-                  <h4 className="text-lg font-semibold">{project.title}</h4>
-                  <p>{project.description}</p>
-                  <p className="text-sm text-accent">{project.tech}</p>
+                <li key={index} className="group">
+                  <h4 className="text-lg font-semibold text-white group-hover:text-accent transition-colors inline-flex items-center gap-2">
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                      {project.title}
+                    </a>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </h4>
+                  <p className="mt-2">{project.description}</p>
+                  <p className="text-sm text-accent mt-2 font-mono">{project.tech}</p>
                 </li>
               ))}
             </ul>
+            <div className="mt-8 text-center md:text-left">
+                <a href="https://github.com/Fernandofarfan?tab=repositories" target="_blank" rel="noopener noreferrer" className="text-white hover:text-accent underline underline-offset-4 transition-colors">
+                  Ver todos los repositorios en GitHub →
+                </a>
+            </div>
           </Section>
 
           <Section id="certifications" title="Certificaciones Destacadas">
