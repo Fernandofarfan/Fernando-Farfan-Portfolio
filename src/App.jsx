@@ -9,8 +9,42 @@ export default function App() {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [language, setLanguage] = useState('es');
+  const [submissionStatus, setSubmissionStatus] = useState(null); // null, 'submitting', 'success', 'error'
 
   const data = content[language];
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSubmissionStatus('submitting');
+
+    const formData = new FormData(e.target);
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      message: formData.get('message')
+    };
+
+    try {
+      const response = await fetch('https://send.pageclip.co/83aEvugDvi52U8eu3bb3L3UdW4wj9jeZ', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-REQ-METHOD': 'form-v1'
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (response.ok) {
+        setSubmissionStatus('success');
+        e.target.reset();
+      } else {
+        setSubmissionStatus('error');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmissionStatus('error');
+    }
+  };
 
   useEffect(() => {
     if (mobileMenuOpen) {
@@ -277,25 +311,48 @@ export default function App() {
             <div className="grid grid-cols-1 gap-12">
               <div>
                 <p className="text-textSecondary mb-8 text-lg">{data.contact.description}</p>
-                <form action="https://send.pageclip.co/83aEvugDvi52U8eu3bb3L3UdW4wj9jeZ?success=https://fernandofarfan.github.io/Fernando-Farfan-Portfolio/" className="pageclip-form space-y-6" method="post">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-textSecondary mb-2">{data.contact.nameLabel}</label>
-                      <input type="text" name="name" id="name" required className="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors" />
+                
+                {submissionStatus === 'success' ? (
+                  <div className="bg-green-500/10 border border-green-500 text-green-500 p-6 rounded-lg text-center">
+                    <h4 className="text-xl font-semibold mb-2">¡Mensaje enviado!</h4>
+                    <p>Gracias por contactarme. Te responderé a la brevedad.</p>
+                    <button 
+                      onClick={() => setSubmissionStatus(null)}
+                      className="mt-4 text-sm underline hover:text-green-400"
+                    >
+                      Enviar otro mensaje
+                    </button>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label htmlFor="name" className="block text-sm font-medium text-textSecondary mb-2">{data.contact.nameLabel}</label>
+                        <input type="text" name="name" id="name" required className="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors" />
+                      </div>
+                      <div>
+                        <label htmlFor="email" className="block text-sm font-medium text-textSecondary mb-2">{data.contact.emailLabel}</label>
+                        <input type="email" name="email" id="email" required className="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors" />
+                      </div>
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-textSecondary mb-2">{data.contact.emailLabel}</label>
-                      <input type="email" name="email" id="email" required className="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors" />
+                      <label htmlFor="message" className="block text-sm font-medium text-textSecondary mb-2">{data.contact.messageLabel}</label>
+                      <textarea name="message" id="message" rows="4" required className="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors"></textarea>
                     </div>
-                  </div>
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-textSecondary mb-2">{data.contact.messageLabel}</label>
-                    <textarea name="message" id="message" rows="4" required className="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors"></textarea>
-                  </div>
-                  <button type="submit" className="pageclip-form__submit w-full bg-accent text-black font-bold py-3 rounded-lg hover:opacity-90 transition-opacity">
-                    <span>{data.contact.sendButton}</span>
-                  </button>
-                </form>
+                    
+                    {submissionStatus === 'error' && (
+                      <p className="text-red-500 text-sm">Hubo un error al enviar el mensaje. Por favor intenta nuevamente.</p>
+                    )}
+
+                    <button 
+                      type="submit" 
+                      disabled={submissionStatus === 'submitting'}
+                      className="w-full bg-accent text-black font-bold py-3 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      {submissionStatus === 'submitting' ? 'Enviando...' : data.contact.sendButton}
+                    </button>
+                  </form>
+                )}
               </div>
             </div>
           </Section>
