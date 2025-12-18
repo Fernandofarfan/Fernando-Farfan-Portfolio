@@ -1,10 +1,33 @@
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./index.css";
 import Section from "./components/Section";
 import { profile, about, experience, education, projects, certifications, skills } from "./data";
 
 export default function App() {
+  const [activeSection, setActiveSection] = useState("");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ["about", "experience", "education", "projects", "certifications", "skills"];
+      const scrollPosition = window.scrollY + 200;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element && element.offsetTop <= scrollPosition && (element.offsetTop + element.offsetHeight) > scrollPosition) {
+          setActiveSection(section);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const navLinkClass = (section) => 
+    `block hover:text-accent transition-all duration-300 ${activeSection === section ? 'text-accent font-bold translate-x-2' : ''}`;
+
   return (
     <main className="bg-background text-textPrimary font-sans min-h-screen">
       <div className="grid grid-cols-12 max-w-6xl mx-auto">
@@ -16,12 +39,12 @@ export default function App() {
               {profile.description}
             </p>
             <nav className="mt-8 md:mt-10 space-y-2 text-sm uppercase tracking-widest text-textSecondary hidden md:block">
-              <a href="#about" className="block hover:text-accent">Sobre mí</a>
-              <a href="#experience" className="block hover:text-accent">Experiencia</a>
-              <a href="#education" className="block hover:text-accent">Educación</a>
-              <a href="#projects" className="block hover:text-accent">Proyectos</a>
-              <a href="#certifications" className="block hover:text-accent">Certificaciones</a>
-              <a href="#skills" className="block hover:text-accent">Habilidades</a>
+              <a href="#about" className={navLinkClass('about')}>Sobre mí</a>
+              <a href="#experience" className={navLinkClass('experience')}>Experiencia</a>
+              <a href="#education" className={navLinkClass('education')}>Educación</a>
+              <a href="#projects" className={navLinkClass('projects')}>Proyectos</a>
+              <a href="#certifications" className={navLinkClass('certifications')}>Certificaciones</a>
+              <a href="#skills" className={navLinkClass('skills')}>Habilidades</a>
             </nav>
           </div>
           <div className="text-sm text-textSecondary mt-8 md:mt-10 text-center md:text-left">
