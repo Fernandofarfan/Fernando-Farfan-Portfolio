@@ -244,3 +244,20 @@ export const skills = [
     items: ["Scrum Master", "Agile & Waterfall", "TDD / BDD", "POO", "Diseño UX/UI"]
   }
 ];
+
+export const testimonials = [
+  {
+    name: "Juan Pablo Gambarotto",
+    role: "Talent Acquisition Specialist",
+    date: "16 de mayo de 2025",
+    relation: "Trabajó con Guillermo en distintas empresas",
+    quote: "Guillermo es un profesional comprometido, confiable y orientado a resultados. En cada proyecto demuestra perseverancia, análisis y una fuerte dedicación, cumpliendo siempre con los objetivos en tiempo y forma. Es un recurso valioso que aporta tanto a nivel laboral como humano, y sin duda suma significativamente a cualquier equipo."
+  },
+  {
+    name: "Mónica Sch",
+    role: "Regional IT Talent Acquisition | Senior Recruiter IT",
+    date: "10 de mayo de 2024",
+    relation: "Asesoró a Guillermo",
+    quote: "Guillermo es un profesional comprometido con todos los desafíos que encara. Sabés que contás con él y tenes la certeza de que cumple con los objetivos del proyecto en tiempo y forma. Perseverante, analítico, con orientación a resultados, siempre se brinda al máximo. Es un recurso valioso que sumará muchísimo a cualquier equipo, tanto a nivel laboral como humano."
+  }
+];
