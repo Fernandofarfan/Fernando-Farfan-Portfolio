@@ -1,90 +1,94 @@
 export const profile = {
-  name: "Guillermo Fernando Farfan",
+  name: "Guillermo Fernando Farfan Romero",
   role: "Full Stack Developer | DBA | Data Analyst",
-  description: "Desarrollador Full Stack y Administrador de Bases de Datos con más de 5 años de experiencia en soluciones digitales escalables y orientadas a datos.",
+  description: "Desarrollador Full Stack con formación en Sistemas y Relaciones Laborales. Apasionado por crear soluciones tecnológicas innovadoras con experiencia en Java, Python, Node.js, React y bases de datos.",
   email: "fernando.farfan16@gmail.com",
   location: "Buenos Aires, Argentina",
   social: {
     github: "https://github.com/Fernandofarfan",
     linkedin: "https://www.linkedin.com/in/guillermo-farfan",
-    instagram: "https://www.instagram.com/fernando.farfan07/"
+    instagram: "https://www.instagram.com/fernando.farfan07/",
+    credly: "https://www.credly.com/users/fernando-farfan"
   },
   cvLink: "/Fernando-Farfan-Portfolio/CV-Guillermo-Fernando-Farfan.pdf"
 };
 
 export const about = [
-  "Soy un <strong>Full Stack Developer</strong> y <strong>Administrador de Bases de Datos</strong> con más de 5 años de experiencia, especializado en desarrollo backend y administración de bases de datos en entornos críticos.",
-  "Mi expertise abarca el diseño e implementación de <strong>APIs RESTful y GraphQL</strong>, arquitecturas de microservicios, y la administración avanzada de bases de datos SQL y NoSQL. Consolido proyectos utilizando <strong>Node.js, Java/Spring Boot, .NET y Python</strong>, apoyados en infraestructura cloud y prácticas DevOps.",
-  "Actualmente, me desempeño como <strong>Desarrollador Full Stack Freelance</strong>, donde diseño soluciones completas: interfaces intuitivas con React y Vue.js, lógica de servidor robusta, y administración de bases de datos con foco en rendimiento, seguridad y escalabilidad.",
-  "He trabajado en entornos educativos, administrativos y tecnológicos como la <strong>UBA</strong>, el <strong>Gobierno de la Ciudad de Buenos Aires</strong>, <strong>Supra Brokers</strong> y <strong>Coderhouse</strong>. Esta experiencia me permitió liderar proyectos ágiles y multidisciplinarios, combinando desarrollo de software con gestión de datos estratégica.",
-  "A lo largo de mi carrera completé más de una docena de certificaciones internacionales (IBM, Meta, Google, Microsoft) en áreas como desarrollo full stack, DevOps, análisis de datos y cloud computing.",
-  "En mi tiempo libre, disfruto aprender nuevas tecnologías, analizar mercados financieros, compartir conocimientos y jugar partidas de League of Legends."
+  "Soy <strong>Guillermo Fernando Farfan Romero</strong>, Desarrollador Full Stack con formación en Sistemas y Relaciones Laborales. Actualmente curso la <strong>Tecnicatura Universitaria en Sistemas</strong> en la Universidad Tecnológica Nacional y me encuentro en la etapa final de la carrera de Relaciones Laborales en la Universidad de Buenos Aires.",
+  "Me apasiona crear soluciones tecnológicas innovadoras. Como freelance, he desarrollado interfaces web responsivas, <strong>APIs RESTful y GraphQL</strong>, trabajando con tecnologías como <strong>Java, Python, Node.js, React, MongoDB y Docker</strong>.",
+  "Busco nuevas oportunidades para crecer profesionalmente en un equipo de TI que valore el compromiso, la colaboración y el aprendizaje continuo."
 ];
 
 export const experience = [
   {
     role: "Technical & Digital Analyst",
     company: "Supra Brokers",
-    period: "Junio 2025 - Agosto 2025",
-    description: "Colaboración en proyectos de seguridad informática, documentación técnica de entornos y procesos de bases de datos. Automatización de flujos de trabajo y procesos ETL con SQL y Python. Gestión de incidentes y mantenimiento de plataformas de bases de datos.",
-    tags: ["SQL", "Python", "ETL", "Ciberseguridad", "Documentación"]
+    period: "Julio 2025 - Agosto 2025",
+    description: "Digitalización de procesos y soporte operativo-tecnológico. Carga y revisión de contratos en AdminSeg. Automatización de tareas mediante macros, Google AppScript y Power Automate. Desarrollo de dashboards en Power BI y Looker Studio.",
+    tags: ["Python", "SQL", "Power BI", "Looker Studio", "AppScript", "Power Automate"]
   },
   {
     role: "Desarrollador Full Stack Freelance",
     company: "Independiente",
-    period: "Noviembre 2021 - Presente",
-    description: "Desarrollo de aplicaciones web con Node.js, React, Spring Boot, Flask y .NET. Diseño, consumo y documentación de APIs RESTful y GraphQL. Implementación de arquitecturas backend con integración a PostgreSQL, MySQL y MongoDB. Automatización de procesos y despliegues con Python, Bash y PowerShell.",
-    tags: ["JavaScript", "React", "Vue.js", "Node.js", "Spring Boot", "Python", "GraphQL", "MongoDB", "MySQL"]
+    period: "Noviembre 2021 - Actualidad",
+    description: "Desarrollo de interfaces web responsivas (React, Vue.js). Diseño y construcción de APIs RESTful y GraphQL (Node.js, Python, Java, PHP). Integración de servicios de terceros, testing y depuración.",
+    tags: ["React", "Node.js", "Python", "Java", "GraphQL", "Scrum"]
   },
   {
     role: "Administrador DBA | Administrativo",
     company: "Universidad de Buenos Aires",
     period: "Marzo 2018 - Mayo 2024",
-    description: "Administración y soporte de SQL Server y PostgreSQL en entornos académicos y administrativos. Mantenimiento de integridad, seguridad y disponibilidad de los datos. Implementación y monitoreo de planes de backup y restore. Generación de reportes y consultas SQL para distintas áreas. Optimización de procesos e integración con sistemas de gestión.",
-    tags: ["SQL Server", "PostgreSQL", "MySQL", "Análisis de Datos", "Backup/Restore"]
+    description: "Administración y gestión de bases de datos relacionales con SQL. Optimización de estructuras, consultas complejas para análisis de datos y garantía de integridad y seguridad de la información.",
+    tags: ["SQL", "Bases de Datos", "Scrum", "Análisis de Datos"]
   },
   {
     role: "Coordinador de Sistemas",
-    company: "GCBA",
+    company: "Gobierno de la Ciudad de Buenos Aires",
     period: "Febrero 2021 - Noviembre 2023",
-    description: "Planes de respaldo, gestión documental técnica, y talleres sobre SQL y administración de datos.",
-    tags: ["MySQL", "MongoDB", "SQL", "Talleres Técnicos", "Documentación"]
+    description: "Gestión avanzada de bases de datos (MySQL, MongoDB). Documentación técnica, dictado de talleres sobre SQL. Implementación de planes de respaldo, optimización de rendimiento y control de accesos.",
+    tags: ["MySQL", "MongoDB", "Backup/Restore", "Tuning", "Seguridad"]
   },
   {
     role: "Maestro",
     company: "Coderhouse",
     period: "Julio 2022 - Septiembre 2022",
-    description: "Asistencia académica en frontend, progreso estudiantil y soporte técnico en React.",
-    tags: ["React", "JavaScript", "Docencia"]
+    description: "Orientación académica, monitoreo del progreso de estudiantes y soporte técnico.",
+    tags: ["Docencia", "Pensamiento Crítico"]
   },
   {
     role: "Administrador DBA | Administrativo",
-    company: "Defensoría del Pueblo",
+    company: "Defensoría del Pueblo CABA",
     period: "Junio 2018 - Junio 2022",
-    description: "Consultas SQL básicas, soporte de reportes e informes, mantenimiento de bases y definición de índices.",
-    tags: ["SQL", "Reportes", "PostgreSQL"]
+    description: "Gestión de bases de datos relacionales, consultas SQL, reportes e informes. Mantenimiento diario y creación de índices.",
+    tags: ["SQL", "Reportes", "Mantenimiento DB"]
   },
   {
     role: "Administrativo",
-    company: "FMC",
+    company: "FMC Corporation",
     period: "Febrero 2016 - Marzo 2017",
-    description: "Gestión de agendas y reportes administrativos con uso extensivo de hojas de cálculo.",
+    description: "Gestión administrativa y uso de herramientas de oficina.",
     tags: ["Excel", "Organización"]
   }
 ];
 
 export const education = [
   {
-    title: "Tecnicatura en Sistemas",
+    title: "Tecnicatura en Sistemas de Información de Gestión",
     institution: "Universidad Tecnológica Nacional (UTN)",
-    period: "2023 - Actualidad",
-    description: "Formación técnica en desarrollo de software, arquitectura de sistemas, bases de datos y metodologías ágiles."
+    period: "2024 - 2027 (En curso)",
+    description: "Formación en desarrollo de software, bases de datos y metodologías ágiles."
   },
   {
     title: "Licenciatura en Relaciones Laborales",
     institution: "Universidad de Buenos Aires (UBA)",
-    period: "2016 - 2025",
-    description: "Formación en gestión de recursos humanos, derecho laboral y administración organizacional."
+    period: "2016 - 2024",
+    description: "Formación en gestión de recursos humanos y administración organizacional."
+  },
+  {
+    title: "Bachillerato en Ciencias Sociales",
+    institution: "Colegio Américo Vespucio",
+    period: "2010 - 2015",
+    description: ""
   }
 ];
 
@@ -129,58 +133,64 @@ export const projects = [
 
 export const certifications = [
   {
+    title: "IBM Java Developer Professional Certificate",
+    date: "Octubre 2025",
+    id: "KU5H3PJ57M7W",
+    skills: "Java, SQL, Spring Framework, Microservices, POO"
+  },
+  {
     title: "IBM DevOps and Software Engineering",
     date: "Mayo 2025",
-    id: "GRXXULQ80CH0",
-    skills: "DevOps, CI/CD, Docker, Kubernetes, OpenShift, Microservices, Serverless, TDD/BDD"
+    id: "WECAD3GAK2VA",
+    skills: "DevOps, CI/CD, Docker, Kubernetes, TDD/BDD"
   },
   {
     title: "IBM IT Scrum Master",
     date: "Julio 2024",
     id: "9HBDHURRLKZM",
-    skills: "Scrum, DevOps, Scrum Master, Agile y Waterfall"
+    skills: "Scrum, DevOps, Agile"
   },
   {
     title: "Google Data Analytics",
     date: "Abril 2024",
     id: "QY27MQNBLVW9",
-    skills: "Análisis de datos, R, Estadística, Almacenamiento de datos"
+    skills: "Análisis de datos, R, Estadística"
   },
   {
     title: "IBM Full Stack Software Developer",
     date: "Enero 2024",
-    id: "FQJ2RWTAQUT4",
-    skills: "JavaScript, React, Node.js, Flask, Python, SQL, GitHub, Docker, Kubernetes"
+    id: "Z1OJ8AI5UFDM",
+    skills: "JS, React, Node.js, Python, Docker, Kubernetes, SQL"
   },
   {
     title: "IBM Back-end JavaScript Developer",
-    date: "2023",
-    id: null,
-    skills: "Node.js, Express.js, JavaScript, APIs RESTful, MongoDB, Testing"
+    date: "Diciembre 2023",
+    id: "7ZT98PBD1XAR",
+    skills: "Node.js, Express, MongoDB, Microservices"
   },
   {
-    title: "IBM Back-End Developer",
-    date: "2023",
-    id: null,
-    skills: "Python, Django, Flask, APIs, Bases de datos, Microservicios"
+    title: "IBM Back-End Development",
+    date: "Octubre 2023",
+    id: "PA0KVDG6VGPZ",
+    skills: "Python, Docker, Kubernetes, OpenShift, Flask"
   },
   {
     title: "IBM Front-End Developer",
-    date: "2023",
-    id: null,
-    skills: "React, JavaScript, HTML5, CSS3, Responsive Design, UI/UX"
+    date: "Octubre 2023",
+    id: "W3JHUWJ3KJRY",
+    skills: "React, Bootstrap, HTML, CSS, Git"
   },
   {
     title: "Meta - Desarrollador Back-End",
     date: "Junio 2023",
     id: "RKT4LXWZTHV4",
-    skills: "Python, Django REST, SQL, Git, Pruebas API"
+    skills: "Python, Django REST, SQL, API Testing"
   },
   {
     title: "Meta - Desarrollador Front-End",
     date: "Junio 2023",
     id: "NDT53U2D6CJR",
-    skills: "JavaScript, HTML, CSS, React, UX"
+    skills: "React, UX Design, HTML, CSS"
   },
   {
     title: "Oracle Next Education Back-End",
@@ -196,41 +206,41 @@ export const certifications = [
   },
   {
     title: "Microsoft Data Analytics",
-    date: "2022",
+    date: "Septiembre 2021",
     id: null,
-    skills: "Power BI, Excel, SQL, Análisis de datos, Visualización"
+    skills: "Análisis de datos, Power BI"
   },
   {
-    title: "Google Cloud Fundamentals",
-    date: "Junio 2020",
-    id: "XUBRBN5JAFNJ",
-    skills: "Google Cloud Platform, Infraestructura Cloud"
+    title: "Microsoft Cybersecurity Fundamentals",
+    date: "Abril 2021",
+    id: null,
+    skills: "Ciberseguridad"
   }
 ];
 
 export const skills = [
   {
-    category: "Frontend",
-    items: ["HTML5 / CSS3", "JavaScript / TypeScript", "React, Vue.js", "Bootstrap, Tailwind CSS"]
+    category: "Lenguajes",
+    items: ["Java", "Python", "JavaScript", "C#", "R", "SQL", "HTML/CSS"]
   },
   {
-    category: "Backend",
-    items: ["Node.js, Express.js", "Python (Flask, Django)", "Java (Spring Boot)", "PHP, .NET, Ruby"]
+    category: "Frameworks & Librerías",
+    items: ["Spring Boot", "React.js", "Node.js / Express", "Django / Flask", ".NET Framework", "Bootstrap"]
   },
   {
-    category: "Base de Datos",
-    items: ["SQL Server, PostgreSQL, MySQL", "MongoDB, MongoDB Atlas", "Firebase", "Administración DBA, Tuning, HA/DR"]
+    category: "Bases de Datos",
+    items: ["MySQL", "MongoDB", "SQL Server", "NoSQL", "Administración DBA"]
   },
   {
-    category: "DevOps / Infraestructura",
-    items: ["Git, GitHub, GitLab", "Docker, Kubernetes, OpenShift", "CI/CD, Jenkins, GitHub Actions"]
+    category: "DevOps & Cloud",
+    items: ["Docker", "Kubernetes", "OpenShift", "CI/CD", "Google Cloud", "Linux"]
   },
   {
-    category: "Data & QA",
-    items: ["Python (pandas, NumPy, Matplotlib)", "R, SQL Avanzado, T-SQL", "TDD / BDD, API Testing", "Power BI, ETL"]
+    category: "Data & Herramientas",
+    items: ["Power BI", "Looker Studio", "Git / GitHub", "Jira", "Power Automate", "Excel Avanzado"]
   },
   {
-    category: "Automatización & Herramientas",
-    items: ["PowerShell, Bash, Python Scripts", "Jira, Trello", "Teams, SharePoint, Outlook", "TeamViewer"]
+    category: "Metodologías",
+    items: ["Scrum Master", "Agile & Waterfall", "TDD / BDD", "POO", "Diseño UX/UI"]
   }
 ];
