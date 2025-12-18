@@ -6,6 +6,15 @@ import { profile, about, experience, education, projects, certifications, skills
 export default function App() {
   const [activeSection, setActiveSection] = useState("");
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [mobileMenuOpen]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,8 +54,37 @@ export default function App() {
   const navLinkClass = (section) => 
     `block hover:text-accent transition-all duration-300 ${activeSection === section ? 'text-accent font-bold translate-x-2' : ''}`;
 
+  const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
+
   return (
     <main className="bg-background text-textPrimary font-sans min-h-screen">
+      {/* Mobile Menu Button */}
+      <button 
+        onClick={toggleMobileMenu}
+        className="md:hidden fixed top-4 right-4 z-50 bg-slate-800/80 backdrop-blur-md p-2 rounded-lg border border-slate-700 text-white shadow-lg"
+        aria-label="Menu"
+      >
+        {mobileMenuOpen ? (
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        ) : (
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        )}
+      </button>
+
+      {/* Mobile Menu Overlay */}
+      <div className={`md:hidden fixed inset-0 z-40 bg-background/95 backdrop-blur-xl transition-transform duration-300 ease-in-out ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <div className="flex flex-col items-center justify-center h-full space-y-8 text-xl font-medium">
+          <a href="#about" onClick={toggleMobileMenu} className={activeSection === 'about' ? 'text-accent' : 'text-white'}>Sobre mí</a>
+          <a href="#experience" onClick={toggleMobileMenu} className={activeSection === 'experience' ? 'text-accent' : 'text-white'}>Experiencia</a>
+          <a href="#education" onClick={toggleMobileMenu} className={activeSection === 'education' ? 'text-accent' : 'text-white'}>Educación</a>
+          <a href="#projects" onClick={toggleMobileMenu} className={activeSection === 'projects' ? 'text-accent' : 'text-white'}>Proyectos</a>
+          <a href="#certifications" onClick={toggleMobileMenu} className={activeSection === 'certifications' ? 'text-accent' : 'text-white'}>Certificaciones</a>
+          <a href="#testimonials" onClick={toggleMobileMenu} className={activeSection === 'testimonials' ? 'text-accent' : 'text-white'}>Testimonios</a>
+          <a href="#skills" onClick={toggleMobileMenu} className={activeSection === 'skills' ? 'text-accent' : 'text-white'}>Habilidades</a>
+          <a href={profile.cvLink} download className="mt-8 px-6 py-3 bg-accent text-black font-bold rounded-full">Descargar CV</a>
+        </div>
+      </div>
+
       <div className="grid grid-cols-12 max-w-6xl mx-auto">
         <aside className="col-span-12 md:col-span-4 md:sticky md:top-0 md:h-screen p-6 md:p-8 flex flex-col md:justify-between bg-background">
           <div className="text-center md:text-left">
