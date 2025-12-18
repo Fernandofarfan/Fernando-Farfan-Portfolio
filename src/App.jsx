@@ -277,13 +277,7 @@ export default function App() {
             <div className="grid grid-cols-1 gap-12">
               <div>
                 <p className="text-textSecondary mb-8 text-lg">{data.contact.description}</p>
-                <form className="space-y-6" onSubmit={(e) => {
-                  e.preventDefault();
-                  const formData = new FormData(e.target);
-                  const subject = `Contact from Portfolio: ${formData.get('name')}`;
-                  const body = `Name: ${formData.get('name')}\nEmail: ${formData.get('email')}\n\nMessage:\n${formData.get('message')}`;
-                  window.location.href = `mailto:${data.profile.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-                }}>
+                <form action="https://send.pageclip.co/83aEvugDvi52U8eu3bb3L3UdW4wj9jeZ" className="pageclip-form space-y-6" method="post">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-textSecondary mb-2">{data.contact.nameLabel}</label>
@@ -298,8 +292,8 @@ export default function App() {
                     <label htmlFor="message" className="block text-sm font-medium text-textSecondary mb-2">{data.contact.messageLabel}</label>
                     <textarea name="message" id="message" rows="4" required className="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors"></textarea>
                   </div>
-                  <button type="submit" className="w-full bg-accent text-black font-bold py-3 rounded-lg hover:opacity-90 transition-opacity">
-                    {data.contact.sendButton}
+                  <button type="submit" className="pageclip-form__submit w-full bg-accent text-black font-bold py-3 rounded-lg hover:opacity-90 transition-opacity">
+                    <span>{data.contact.sendButton}</span>
                   </button>
                 </form>
               </div>
