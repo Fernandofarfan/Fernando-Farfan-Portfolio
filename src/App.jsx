@@ -28,7 +28,7 @@ export default function App() {
       const response = await fetch('https://send.pageclip.co/83aEvugDvi52U8eu3bb3L3UdW4wj9jeZ', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/vnd.pageclip.v1+json',
           'X-REQ-METHOD': 'form-v1'
         },
         body: JSON.stringify(data)
