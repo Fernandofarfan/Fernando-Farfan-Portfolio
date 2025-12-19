@@ -12,7 +12,8 @@
   "dependencies": {
     "framer-motion": "^12.17.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "sonner": "^2.0.7"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.0",
