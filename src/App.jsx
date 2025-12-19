@@ -26,7 +26,8 @@ export default function App() {
 
     try {
       // Usando FormSubmit.co que tiene mejor soporte para AJAX/React
-      const response = await fetch("https://formsubmit.co/ajax/fernando.farfan16@gmail.com", {
+      const email = import.meta.env.VITE_CONTACT_EMAIL;
+      const response = await fetch(`https://formsubmit.co/ajax/${email}`, {
         method: "POST",
         headers: { 
             'Content-Type': 'application/json',
