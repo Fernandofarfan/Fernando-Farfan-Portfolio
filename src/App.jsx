@@ -25,11 +25,12 @@ export default function App() {
     };
 
     try {
-      const response = await fetch('https://send.pageclip.co/83aEvugDvi52U8eu3bb3L3UdW4wj9jeZ', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/vnd.pageclip.v1+json',
-          'X-REQ-METHOD': 'form-v1'
+      // Usando FormSubmit.co que tiene mejor soporte para AJAX/React
+      const response = await fetch("https://formsubmit.co/ajax/fernando.farfan16@gmail.com", {
+        method: "POST",
+        headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
         },
         body: JSON.stringify(data)
       });
