@@ -46,7 +46,7 @@ export default function App() {
 
       // Detectar si estamos al final de la página
       if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
-        setActiveSection("contact"); 
+        setActiveSection("contact");
         return;
       }
 
@@ -73,21 +73,21 @@ export default function App() {
   return (
     <main className="bg-background text-textPrimary font-sans min-h-screen">
       <Toaster position="top-right" richColors />
-      <MobileMenu 
-        mobileMenuOpen={mobileMenuOpen} 
-        toggleMobileMenu={toggleMobileMenu} 
-        language={language} 
-        toggleLanguage={toggleLanguage} 
-        activeSection={activeSection} 
-        data={data} 
+      <MobileMenu
+        mobileMenuOpen={mobileMenuOpen}
+        toggleMobileMenu={toggleMobileMenu}
+        language={language}
+        toggleLanguage={toggleLanguage}
+        activeSection={activeSection}
+        data={data}
       />
 
       <div className="grid grid-cols-12 max-w-6xl mx-auto">
-        <Sidebar 
-          data={data} 
-          language={language} 
-          toggleLanguage={toggleLanguage} 
-          activeSection={activeSection} 
+        <Sidebar
+          data={data}
+          language={language}
+          toggleLanguage={toggleLanguage}
+          activeSection={activeSection}
         />
 
         <div className="col-span-12 md:col-span-8 p-6 md:p-8 space-y-12 md:space-y-20">
@@ -101,18 +101,18 @@ export default function App() {
           <Contact data={data} />
 
           <footer className="text-center text-textSecondary text-sm py-8 mt-12 border-t border-slate-800">
-            <p>© {new Date().getFullYear()} {data.profile.name}. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} {data.profile.name}. All rights reserved. v1.1.0</p>
           </footer>
         </div>
       </div>
-      
+
       {/* Scroll to Top Button */}
-      <button 
+      <button
         onClick={scrollToTop}
         className={`fixed bottom-8 right-8 bg-accent text-black p-3 rounded-full shadow-lg hover:bg-opacity-80 transition-all duration-300 z-50 ${showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}
         aria-label="Volver arriba"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 15l-6-6-6 6" /></svg>
       </button>
     </main>
   );
