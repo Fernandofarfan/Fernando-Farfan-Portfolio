@@ -1,57 +1,43 @@
-# Cómo Agregar tu CV al Portfolio
+# Cómo Administrar los CVs del Portfolio
 
-## Pasos para que el botón "Descargar CV" funcione:
+## Pasos para actualizar los archivos de descarga:
 
-### 1. Prepara tu archivo PDF
-- Asegúrate de tener tu CV en formato PDF
-- Renombra el archivo a: **`CV-Guillermo-Fernando-Farfan.pdf`**
-- Tamaño recomendado: menos de 2MB
+### 1. Prepara tus archivos PDF
+- Asegúrate de tener tus CVs actualizados.
+- Renombra los archivos siguiendo este esquema:
+  - Español: **`CV_Guillermo_Farfan_ES.pdf`**
+  - Inglés: **`CV_Guillermo_Farfan_EN.pdf`**
 
-### 2. Coloca el PDF en la carpeta `public`
-Copia tu archivo PDF a esta ubicación:
-```
-c:\Users\Fernando\OneDrive\Desktop\Fernando-Farfan-Portfolio\public\CV-Guillermo-Fernando-Farfan.pdf
-```
+### 2. Coloca los archivos en la carpeta `public`
+Copia ambos archivos a la carpeta `public/` de este proyecto.
 
-### 3. Verifica localmente (opcional)
+### 3. Sincroniza y Despliega
+Para que los cambios se vean en vivo, ejecuta:
+
 ```bash
-npm run dev
-```
-Abre http://localhost:5173/ y prueba el botón "Descargar CV"
-
-### 4. Despliega los cambios
-```bash
+git add .
+git commit -m "update: refresh CV files"
+git push origin main
 npm run deploy
 ```
 
-### 5. Verifica en el sitio en vivo
-Visita https://fernandofarfan.github.io/Fernando-Farfan-Portfolio/ y prueba el botón
-
-## Estructura de Archivos
+## Estructura de Archivos recomendada
 
 ```
 Fernando-Farfan-Portfolio/
 ├── public/
-│   ├── README.md
-│   └── CV-Guillermo-Fernando-Farfan.pdf  ← Tu CV aquí
+│   ├── CV_Guillermo_Farfan_ES.pdf  ← Versión Español
+│   ├── CV_Guillermo_Farfan_EN.pdf  ← Versión Inglés
+│   └── favicon.svg
 ├── src/
-│   └── App.jsx (configurado con la ruta correcta)
+│   └── data.js  ← (Aquí se configuran los links de descarga)
 └── ...
 ```
 
-## Notas Importantes
+## Solución de problemas (Caché)
 
-✅ **La carpeta `public` ya está creada**
-✅ **El código ya está configurado para buscar el archivo**
-✅ **Solo necesitas copiar tu PDF a la carpeta `public`**
+Si después de actualizar los archivos sigues viendo la versión vieja:
+1. Asegúrate de que el comando `npm run deploy` terminó con éxito.
+2. Limpia la caché del navegador (`Ctrl + F5`) o prueba en una ventana de incógnito.
+3. El sitio tiene una versión en el pie de página (ej: v1.1.0) para ayudarte a identificar si los cambios se aplicaron.
 
-⚠️ **El nombre del archivo debe ser exactamente:** `CV-Guillermo-Fernando-Farfan.pdf` (con guiones, sin espacios)
-
-## Cambiar el CV en el futuro
-
-Para actualizar tu CV:
-1. Reemplaza el archivo PDF en la carpeta `public`
-2. Ejecuta `npm run deploy`
-3. Los cambios se reflejarán en el sitio en vivo
-
-¡Listo! Una vez que copies tu CV a la carpeta `public`, el botón funcionará automáticamente.
