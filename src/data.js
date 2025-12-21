@@ -25,7 +25,7 @@ export const content = {
         instagram: "https://www.instagram.com/fernando.farfan07/",
         credly: "https://www.credly.com/users/fernando-farfan.855a5067/badges#credly"
       },
-      cvLink: "/Fernando-Farfan-Portfolio/CV-Guillermo-Fernando-Farfan.pdf"
+      cvLink: "/Fernando-Farfan-Portfolio/CV-Guillermo-Fernando-Farfan-New.pdf"
     },
     about: [
       "Soy <strong>Guillermo Fernando Farfan Romero</strong>, Desarrollador Full Stack con formación en Sistemas y Relaciones Laborales. Actualmente curso la <strong>Tecnicatura Universitaria en Sistemas</strong> en la Universidad Tecnológica Nacional y me encuentro en la etapa final de la carrera de Relaciones Laborales en la Universidad de Buenos Aires.",
@@ -304,7 +304,7 @@ export const content = {
         instagram: "https://www.instagram.com/fernando.farfan07/",
         credly: "https://www.credly.com/users/fernando-farfan.855a5067/badges#credly"
       },
-      cvLink: "/Fernando-Farfan-Portfolio/CV-Guillermo-Fernando-Farfan-EN.pdf"
+      cvLink: "/Fernando-Farfan-Portfolio/CV-Guillermo-Fernando-Farfan-EN-New.pdf"
     },
     about: [
       "I am <strong>Guillermo Fernando Farfan Romero</strong>, a Full Stack Developer with a background in Systems and Labor Relations. I am currently studying for a <strong>University Technician degree in Systems</strong> at the National Technological University and I am in the final stage of the Labor Relations degree at the University of Buenos Aires.",
