@@ -11,7 +11,7 @@ const Sidebar = ({ data, language, toggleLanguage, toggleTheme, isDark, activeSe
   const sections = ['about', 'experience', 'education', 'projects', 'certifications', 'testimonials', 'skills', 'blog', 'github', 'contact'];
 
   return (
-    <aside className="col-span-12 md:col-span-4 md:sticky md:top-0 md:h-screen p-6 md:p-8 flex flex-col md:justify-between bg-background">
+    <aside className="col-span-12 md:col-span-4 md:sticky md:top-0 md:h-screen overflow-y-auto p-6 md:p-8 flex flex-col md:justify-between bg-background z-10 custom-scrollbar-sidebar">
       <div className="text-center md:text-left">
         <div className="flex justify-between items-start mb-4">
           <div className="inline-block">
