@@ -96,32 +96,37 @@ export const content = {
         title: "Autonomous-FinOps-Engine",
         description: "Motor backend autónomo en Python que escanea entornos GCP detectando infraestructura ociosa y genera código IaC en Terraform para remediación.",
         tech: "Python, GCP, Terraform",
-        link: "https://github.com/Fernandofarfan/Autonomous-FinOps-Engine",
-        featured: true
+        link: "https://github.com/ffarfan-labs/Autonomous-FinOps-Engine",
+        featured: true,
+        category: "Cloud/DevOps"
       },
       {
-        title: "Monitor CI/CD",
-        description: "Dashboard en tiempo real para métricas DORA, pipelines y deployments.",
-        tech: "Node.js, TypeScript, Vue 3, Docker, PostgreSQL",
-        link: "https://github.com/Fernandofarfan/Monitor-CI-CD"
+        title: "Monitor-CI-CD",
+        description: "Dashboard en tiempo real para pipelines y deployments de integración continua. Proporciona alertas y métricas.",
+        tech: "TypeScript, CI/CD, GitHub Actions",
+        link: "https://github.com/ffarfan-labs/Monitor-CI-CD",
+        category: "Cloud/DevOps"
       },
       {
-        title: "Database Dashboard",
-        description: "Plataforma de observabilidad en tiempo real para bases de datos relacionales y NoSQL (PostgreSQL, MySQL).",
-        tech: "Python, FastAPI, React, Docker",
-        link: "https://github.com/Fernandofarfan/Dashboard-Bases-Datos"
+        title: "Dashboard-Bases-Datos",
+        description: "Plataforma de observabilidad en tiempo real interactiva para bases de datos relacionales y NoSQL.",
+        tech: "Python, FastAPI, React",
+        link: "https://github.com/ffarfan-labs/Dashboard-Bases-Datos",
+        category: "Backend"
       },
       {
-        title: "Optimizador de PC v2.0",
-        description: "Suite profesional open source de optimización para Windows con 42 funciones y dashboard web.",
-        tech: "PowerShell, HTML/CSS",
-        link: "https://github.com/Fernandofarfan/Optimizador-de-Computadora-v2.0"
+        title: "Optimizador-de-Computadora",
+        description: "Script avanzado open source en PowerShell para optimizar el rendimiento en sistemas Windows.",
+        tech: "PowerShell, Windows OS",
+        link: "https://github.com/ffarfan-labs/Optimizador-de-Computadora-v2.0",
+        category: "Herramientas"
       },
       {
-        title: "EmpleoIA",
-        description: "Plataforma automatizada de búsqueda de empleo con scraping inteligente (Selenium) y matching de CVs mediante NLP.",
-        tech: "Python, Flask, MongoDB, spaCy",
-        link: "https://github.com/Fernandofarfan/ai-job-matching-platform"
+        title: "rulos-locos",
+        description: "Aplicación web interactiva desarrollada con TypeScript, React y funcionalidades modernas de UI/UX.",
+        tech: "React, TypeScript, UI/UX",
+        link: "https://github.com/Fernandofarfan/rulos-locos",
+        category: "Frontend"
       }
     ],
     certifications: [
@@ -399,32 +404,37 @@ export const content = {
         title: "Autonomous-FinOps-Engine",
         description: "Autonomous backend engine in Python that scans GCP environments detecting idle infrastructure and generates IaC code in Terraform for remediation.",
         tech: "Python, GCP, Terraform",
-        link: "https://github.com/Fernandofarfan/Autonomous-FinOps-Engine",
-        featured: true
+        link: "https://github.com/ffarfan-labs/Autonomous-FinOps-Engine",
+        featured: true,
+        category: "Cloud/DevOps"
       },
       {
         title: "Monitor CI/CD",
         description: "Real-time dashboard for DORA metrics, pipelines, and deployments.",
         tech: "Node.js, TypeScript, Vue 3, Docker, PostgreSQL",
-        link: "https://github.com/Fernandofarfan/Monitor-CI-CD"
+        link: "https://github.com/ffarfan-labs/Monitor-CI-CD",
+        category: "Cloud/DevOps"
       },
       {
         title: "Database Dashboard",
         description: "Real-time observability platform for relational and NoSQL databases (PostgreSQL, MySQL).",
         tech: "Python, FastAPI, React, Docker",
-        link: "https://github.com/Fernandofarfan/Dashboard-Bases-Datos"
+        link: "https://github.com/ffarfan-labs/Dashboard-Bases-Datos",
+        category: "Backend"
       },
       {
         title: "PC Optimizer v2.0",
         description: "Professional open source optimization suite for Windows with 42 functions and web dashboard.",
         tech: "PowerShell, HTML/CSS",
-        link: "https://github.com/Fernandofarfan/Optimizador-de-Computadora-v2.0"
+        link: "https://github.com/ffarfan-labs/Optimizador-de-Computadora-v2.0",
+        category: "Herramientas"
       },
       {
         title: "EmpleoIA",
         description: "Automated job search platform with intelligent scraping (Selenium) and CV matching using NLP.",
         tech: "Python, Flask, MongoDB, spaCy",
-        link: "https://github.com/Fernandofarfan/ai-job-matching-platform"
+        link: "https://github.com/Fernandofarfan/ai-job-matching-platform",
+        category: "Backend"
       }
     ],
     certifications: [

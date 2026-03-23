@@ -1,13 +1,43 @@
 import React, { useState } from 'react';
 import Section from '../Section';
 import { toast } from 'sonner';
+import confetti from 'canvas-confetti';
+import { Send, Loader2, CheckCircle2 } from 'lucide-react';
 
 const Contact = ({ data }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const triggerConfetti = () => {
+    const end = Date.now() + 2.5 * 1000;
+    const colors = ['#64ffda', '#10b981', '#34d399'];
+
+    (function frame() {
+      confetti({
+        particleCount: 5,
+        angle: 60,
+        spread: 55,
+        origin: { x: 0 },
+        colors: colors
+      });
+      confetti({
+        particleCount: 5,
+        angle: 120,
+        spread: 55,
+        origin: { x: 1 },
+        colors: colors
+      });
+
+      if (Date.now() < end) {
+        requestAnimationFrame(frame);
+      }
+    }());
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setIsSuccess(false);
 
     const formData = new FormData(e.target);
     const formPayload = {
@@ -17,7 +47,7 @@ const Contact = ({ data }) => {
     };
 
     try {
-      const email = import.meta.env.VITE_CONTACT_EMAIL;
+      const email = import.meta.env.VITE_CONTACT_EMAIL || "test@example.com";
       const response = await fetch(`https://formsubmit.co/ajax/${email}`, {
         method: "POST",
         headers: { 
@@ -27,18 +57,23 @@ const Contact = ({ data }) => {
         body: JSON.stringify(formPayload)
       });
 
-      if (response.ok) {
-        toast.success('¡Mensaje enviado!', {
-          description: 'Gracias por contactarme. Te responderé a la brevedad.'
+      if (response.ok || response.status === 200) {
+        toast.success(data.contact.title === 'Contacto' ? '¡Mensaje enviado con éxito!' : 'Message sent successfully!', {
+          description: data.contact.title === 'Contacto' ? 'Gracias por contactarme. Te responderé a la brevedad posible.' : 'Thanks for reaching out! I will reply very soon.'
         });
+        setIsSuccess(true);
+        triggerConfetti();
         e.target.reset();
+        
+        // Reset success state after 5 seconds
+        setTimeout(() => setIsSuccess(false), 5000);
       } else {
         throw new Error('Error en la respuesta del servidor');
       }
     } catch (error) {
       console.error('Error submitting form:', error);
-      toast.error('Error al enviar', {
-        description: 'Hubo un error al enviar el mensaje. Por favor intenta nuevamente.'
+      toast.error(data.contact.title === 'Contacto' ? 'Error al enviar' : 'Delivery Error', {
+        description: data.contact.title === 'Contacto' ? 'Hubo un problema al enviar el mensaje. Por favor intenta de nuevo.' : 'There was an error sending the message. Please try again later.'
       });
     } finally {
       setIsSubmitting(false);
@@ -69,17 +104,26 @@ const Contact = ({ data }) => {
 
             <button 
               type="submit" 
-              disabled={isSubmitting}
-              className="w-full bg-gradient-to-r from-accent to-emerald-400 text-background font-bold py-3.5 rounded-xl hover:shadow-lg hover:shadow-accent/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 text-sm"
+              disabled={isSubmitting || isSuccess}
+              className={`w-full font-bold py-3.5 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 text-sm shadow-lg ${
+                isSuccess 
+                  ? 'bg-emerald-500 text-white shadow-emerald-500/20' 
+                  : 'bg-gradient-to-r from-accent to-emerald-400 text-background hover:shadow-accent/20 hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0'
+              }`}
             >
               {isSubmitting ? (
                 <>
-                  <svg className="animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>
-                  Enviando...
+                  <Loader2 className="w-5 h-5 animate-spin" />
+                  {data.contact.title === 'Contacto' ? 'Enviando...' : 'Sending...'}
+                </>
+              ) : isSuccess ? (
+                <>
+                  <CheckCircle2 className="w-5 h-5 animate-bounce" />
+                  {data.contact.title === 'Contacto' ? '¡Enviado con Éxito!' : 'Successfully Sent!'}
                 </>
               ) : (
                 <>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                  <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                   {data.contact.sendButton}
                 </>
               )}
