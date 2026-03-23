@@ -14,6 +14,8 @@ import Projects from "./components/sections/Projects";
 import Certifications from "./components/sections/Certifications";
 import Testimonials from "./components/sections/Testimonials";
 import Skills from "./components/sections/Skills";
+import Blog from "./components/sections/Blog";
+import GitHubStats from "./components/sections/GitHubStats";
 import Contact from "./components/sections/Contact";
 
 export default function App() {
@@ -21,6 +23,7 @@ export default function App() {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [language, setLanguage] = useState('es');
+  const [isDark, setIsDark] = useState(true);
 
   const data = content[language];
 
@@ -32,9 +35,20 @@ export default function App() {
     }
   }, [mobileMenuOpen]);
 
+  // Apply theme class to html
+  useEffect(() => {
+    if (isDark) {
+      document.documentElement.classList.remove('light');
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.add('light');
+    }
+  }, [isDark]);
+
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["about", "experience", "education", "projects", "certifications", "testimonials", "skills", "contact"];
+      const sections = ["about", "experience", "education", "projects", "certifications", "testimonials", "skills", "blog", "github", "contact"];
       const scrollPosition = window.scrollY + 200;
 
       // Show/Hide Scroll to Top button
@@ -69,15 +83,18 @@ export default function App() {
 
   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
   const toggleLanguage = () => setLanguage(prev => prev === 'es' ? 'en' : 'es');
+  const toggleTheme = () => setIsDark(prev => !prev);
 
   return (
-    <main className="bg-background text-textPrimary font-sans min-h-screen">
+    <main className="bg-background text-textPrimary font-sans min-h-screen transition-colors duration-300">
       <Toaster position="top-right" richColors />
       <MobileMenu
         mobileMenuOpen={mobileMenuOpen}
         toggleMobileMenu={toggleMobileMenu}
         language={language}
         toggleLanguage={toggleLanguage}
+        toggleTheme={toggleTheme}
+        isDark={isDark}
         activeSection={activeSection}
         data={data}
       />
@@ -87,6 +104,8 @@ export default function App() {
           data={data}
           language={language}
           toggleLanguage={toggleLanguage}
+          toggleTheme={toggleTheme}
+          isDark={isDark}
           activeSection={activeSection}
         />
 
@@ -98,10 +117,12 @@ export default function App() {
           <Certifications data={data} />
           <Testimonials data={data} />
           <Skills data={data} />
+          <Blog data={data} />
+          <GitHubStats data={data} />
           <Contact data={data} />
 
           <footer className="text-center text-textSecondary text-sm py-8 mt-12 border-t border-slate-800">
-            <p>© {new Date().getFullYear()} {data.profile.name}. All rights reserved. v1.1.0</p>
+            <p>© {new Date().getFullYear()} {data.profile.name}. All rights reserved. v1.2.0</p>
           </footer>
         </div>
       </div>
@@ -109,10 +130,10 @@ export default function App() {
       {/* Scroll to Top Button */}
       <button
         onClick={scrollToTop}
-        className={`fixed bottom-8 right-8 bg-accent text-black p-3 rounded-full shadow-lg hover:bg-opacity-80 transition-all duration-300 z-50 ${showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}
+        className={`fixed bottom-8 right-8 bg-accent text-background p-3 rounded-full shadow-lg hover:shadow-accent/30 hover:scale-110 transition-all duration-300 z-50 ${showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}
         aria-label="Volver arriba"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 15l-6-6-6 6" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 15l-6-6-6 6" /></svg>
       </button>
     </main>
   );
