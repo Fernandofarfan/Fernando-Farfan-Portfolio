@@ -1,5 +1,7 @@
 import React from 'react';
 import TypingAnimation from './TypingAnimation';
+import ParticlesBackground from './ParticlesBackground';
+import ServerStatusWidget from './sections/ServerStatusWidget';
 
 const Sidebar = ({ data, language, toggleLanguage, toggleTheme, isDark, activeSection }) => {
   const navLinkClass = (section) =>
@@ -11,7 +13,8 @@ const Sidebar = ({ data, language, toggleLanguage, toggleTheme, isDark, activeSe
   const sections = ['about', 'experience', 'education', 'projects', 'certifications', 'testimonials', 'skills', 'blog', 'github', 'contact'];
 
   return (
-    <aside className="col-span-12 md:col-span-4 md:sticky md:top-0 md:h-screen overflow-y-auto p-6 md:p-8 flex flex-col md:justify-between bg-background z-10 custom-scrollbar-sidebar">
+    <aside className="relative col-span-12 md:col-span-4 md:sticky md:top-0 md:h-screen overflow-hidden md:overflow-y-auto p-6 md:p-8 flex flex-col md:justify-between bg-background z-10 custom-scrollbar-sidebar">
+      <ParticlesBackground isDark={isDark} />
       <div className="text-center md:text-left">
         <div className="flex justify-between items-start mb-4">
           <div className="inline-block">
@@ -114,6 +117,11 @@ const Sidebar = ({ data, language, toggleLanguage, toggleTheme, isDark, activeSe
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
             {data.profile.downloadCvEn}
           </a>
+        </div>
+        
+        {/* Server Status Widget (Backend Vibe) */}
+        <div className="hidden md:block">
+          <ServerStatusWidget />
         </div>
       </div>
     </aside>
