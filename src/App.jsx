@@ -1,6 +1,6 @@
-
 import React, { useState, useEffect } from "react";
 import { Toaster } from "sonner";
+import { motion, useScroll, useSpring } from "framer-motion";
 import "./index.css";
 import { content } from "./data";
 
@@ -17,6 +17,7 @@ import Skills from "./components/sections/Skills";
 import Blog from "./components/sections/Blog";
 import GitHubStats from "./components/sections/GitHubStats";
 import Contact from "./components/sections/Contact";
+import Terminal from "./components/Terminal";
 
 export default function App() {
   const [activeSection, setActiveSection] = useState("");
@@ -24,6 +25,13 @@ export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [language, setLanguage] = useState('es');
   const [isDark, setIsDark] = useState(true);
+
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
 
   const data = content[language];
 
@@ -86,7 +94,12 @@ export default function App() {
   const toggleTheme = () => setIsDark(prev => !prev);
 
   return (
-    <main className="bg-background text-textPrimary font-sans min-h-screen transition-colors duration-300">
+    <main className="bg-background text-textPrimary font-sans min-h-screen transition-colors duration-300 relative">
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 via-accent to-emerald-400 origin-left z-[100]"
+        style={{ scaleX }}
+      />
+      
       <Toaster position="top-right" richColors />
       <MobileMenu
         mobileMenuOpen={mobileMenuOpen}
@@ -135,6 +148,9 @@ export default function App() {
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 15l-6-6-6 6" /></svg>
       </button>
+
+      {/* Interactive CLI Terminal Widget */}
+      <Terminal data={data} />
     </main>
   );
 }
