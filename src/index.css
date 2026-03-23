@@ -266,3 +266,29 @@ html {
 input:focus, textarea:focus {
   box-shadow: 0 0 0 2px rgba(100, 255, 218, 0.15);
 }
+
+/* Custom Sidebar Scrollbar */
+.custom-scrollbar-sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar-sidebar::-webkit-scrollbar-thumb {
+  background: rgba(100, 255, 218, 0.15);
+  border-radius: 4px;
+}
+
+.custom-scrollbar-sidebar:hover::-webkit-scrollbar-thumb {
+  background: rgba(100, 255, 218, 0.3);
+}
+
+html.light .custom-scrollbar-sidebar::-webkit-scrollbar-thumb {
+  background: rgba(5, 150, 105, 0.15);
+}
+
+html.light .custom-scrollbar-sidebar:hover::-webkit-scrollbar-thumb {
+  background: rgba(5, 150, 105, 0.3);
+}

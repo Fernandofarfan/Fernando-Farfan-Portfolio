@@ -29,18 +29,22 @@ const GitHubStats = ({ data }) => {
         {/* GitHub Stats Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <motion.div
-            className="glass-card rounded-xl p-1 overflow-hidden"
+            className="glass-card rounded-xl p-1 overflow-hidden relative"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <img
-              src={`https://github-readme-stats.vercel.app/api?username=${username}&show_icons=true&include_all_commits=true&count_private=true&theme=transparent&hide_border=true&title_color=64ffda&text_color=8892b0&icon_color=64ffda&bg_color=00000000`}
+              src={`https://github-readme-stats.vercel.app/api?username=${username}&show_icons=true&include_all_commits=true&count_private=true&hide_rank=true&theme=transparent&hide_border=true&title_color=64ffda&text_color=8892b0&icon_color=64ffda&bg_color=00000000`}
               alt="GitHub Stats"
               className="w-full"
               loading="lazy"
             />
+            <div className="absolute top-4 right-4 text-[10px] text-accent/70 font-mono flex items-center gap-1 bg-accent/10 px-2 py-0.5 rounded border border-accent/20">
+              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Org: @ffarfan-labs
+            </div>
           </motion.div>
 
           <motion.div
