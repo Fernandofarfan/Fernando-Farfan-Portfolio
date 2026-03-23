@@ -1,57 +1,116 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { BookOpen, Clock, Tag, ExternalLink } from 'lucide-react';
 import Section from '../Section';
 
 const Blog = ({ data }) => {
+  const [articles, setArticles] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Attempt to fetch articles from Dev.to API
+    fetch('https://dev.to/api/articles?username=fernandofarfan&per_page=3')
+      .then(res => res.json())
+      .then(devArticles => {
+        if (devArticles && devArticles.length > 0) {
+          const formatted = devArticles.map(article => ({
+            title: article.title,
+            excerpt: article.description,
+            date: new Date(article.published_at).toLocaleDateString(),
+            tags: article.tag_list.slice(0, 3), // max 3 tags
+            link: article.url,
+            coverImage: article.cover_image || article.social_image,
+            readTime: `${article.reading_time_minutes} min read`
+          }));
+          setArticles(formatted);
+        } else {
+          setArticles(data.blog.articles);
+        }
+      })
+      .catch(() => {
+        setArticles(data.blog.articles);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  }, [data.blog.articles]);
+
   return (
     <Section id="blog" title={data.blog.sectionTitle}>
-      <p className="text-textSecondary text-sm mb-6">{data.blog.subtitle}</p>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {data.blog.articles.map((article, index) => (
-          <motion.div
-            key={index}
-            className="glass-card rounded-xl p-5 group transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-accent/5 relative overflow-hidden"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: index * 0.1 }}
-          >
-            {/* Coming soon overlay if no link */}
-            {!article.link && (
-              <div className="absolute top-3 right-3">
-                <span className="text-[10px] font-mono text-amber-400/80 bg-amber-900/20 px-2 py-0.5 rounded-full border border-amber-500/20">
-                  Coming Soon
-                </span>
+      <p className="text-textSecondary text-sm mb-8">{data.blog.subtitle}</p>
+      
+      {isLoading ? (
+        <div className="flex justify-center py-10">
+          <div className="w-8 h-8 border-2 border-accent/20 border-t-accent rounded-full animate-spin"></div>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {articles.map((article, index) => (
+            <motion.a
+              href={article.link || '#'}
+              target={article.link ? "_blank" : "_self"}
+              rel="noopener noreferrer"
+              key={index}
+              className={`glass-card rounded-2xl group transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-accent/10 relative overflow-hidden flex flex-col h-full ${!article.link ? 'cursor-default' : 'cursor-pointer'}`}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+            >
+              {/* Cover Image or Gradient Placeholder */}
+              <div className="h-32 w-full bg-slate-800/80 relative overflow-hidden group-hover:bg-slate-800 transition-colors">
+                {article.coverImage ? (
+                  <img src={article.coverImage} alt={article.title} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300" loading="lazy" />
+                ) : (
+                  <div className="absolute inset-0 bg-gradient-to-br from-slate-800 to-accent/10 opacity-50"></div>
+                )}
+                
+                {!article.link && (
+                  <div className="absolute top-3 right-3 z-10">
+                    <span className="text-[10px] font-mono font-bold uppercase text-amber-400 bg-amber-950/80 backdrop-blur-md px-2.5 py-1 rounded border border-amber-500/30">
+                      Coming Soon
+                    </span>
+                  </div>
+                )}
+                <div className="absolute bottom-3 left-3 flex items-center gap-2">
+                  <span className="text-[10px] font-mono text-white/90 bg-slate-900/60 backdrop-blur-md px-2 py-1 rounded flex items-center gap-1.5">
+                    <Clock className="w-3 h-3 text-accent" />
+                    {article.date}
+                  </span>
+                </div>
               </div>
-            )}
 
-            <div className="flex items-center gap-2 mb-3">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent flex-shrink-0"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-              <span className="text-[11px] text-textSecondary font-mono">{article.date}</span>
-            </div>
+              <div className="p-5 flex flex-col flex-grow">
+                <div className="flex justify-between items-start mb-3">
+                  <h4 className="text-base font-bold text-white group-hover:text-accent transition-colors leading-tight line-clamp-2">
+                    {article.title}
+                  </h4>
+                  {article.link && <ExternalLink className="w-4 h-4 text-textSecondary group-hover:text-accent shrink-0 ml-2 opacity-0 group-hover:opacity-100 transition-all -translate-x-2 translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0" />}
+                </div>
 
-            <h4 className="text-sm font-semibold text-white group-hover:text-accent transition-colors mb-2 leading-tight">
-              {article.title}
-            </h4>
+                <p className="text-textSecondary text-xs leading-relaxed mb-5 flex-grow line-clamp-3">
+                  {article.excerpt}
+                </p>
 
-            <p className="text-textSecondary text-xs leading-relaxed mb-4">
-              {article.excerpt}
-            </p>
+                <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-slate-700/50">
+                  {article.tags.map((tag, i) => (
+                    <span key={i} className="text-[10px] font-mono text-accent/80 bg-accent/5 px-2 py-0.5 rounded flex items-center gap-1">
+                      <Tag className="w-2.5 h-2.5" />
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.a>
+          ))}
+        </div>
+      )}
 
-            <div className="flex flex-wrap gap-1.5 mt-auto">
-              {article.tags.map((tag, i) => (
-                <span key={i} className="text-[10px] font-mono text-accent/70 bg-accent/5 px-1.5 py-0.5 rounded">
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </motion.div>
-        ))}
-      </div>
-
-      <p className="text-textSecondary/50 text-xs text-center mt-6 font-mono italic">
-        {data.blog.comingSoon}
-      </p>
+      {articles === data.blog.articles && (
+        <p className="text-textSecondary/40 text-xs text-center mt-8 font-mono italic">
+          {data.blog.comingSoon}
+        </p>
+      )}
     </Section>
   );
 };

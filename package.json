@@ -10,7 +10,9 @@
     "deploy": "gh-pages -d dist --dest . --src \"**/*\" --branch gh-pages --dotfiles"
   },
   "dependencies": {
+    "canvas-confetti": "^1.9.4",
     "framer-motion": "^12.17.3",
+    "lucide-react": "^1.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sonner": "^2.0.7"
