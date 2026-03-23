@@ -10,7 +10,11 @@ const Section = ({ id, title, children }) => (
     viewport={{ once: true }}
     transition={{ duration: 0.6 }}
   >
-    <h3 className="text-xl md:text-2xl font-semibold text-white mb-4 border-b border-slate-700 pb-2">{title}</h3>
+    <div className="flex items-center gap-3 mb-6">
+      <span className="h-2 w-2 rounded-full bg-accent animate-glow-pulse"></span>
+      <h3 className="text-xl md:text-2xl font-semibold text-white">{title}</h3>
+      <span className="flex-1 h-px bg-gradient-to-r from-slate-700 to-transparent"></span>
+    </div>
     {children}
   </motion.section>
 );

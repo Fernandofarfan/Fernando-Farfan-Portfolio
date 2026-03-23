@@ -2,6 +2,182 @@
 @tailwind components;
 @tailwind utilities;
 
+/* --- Dark Mode (Default) --- */
+:root {
+  --bg-background: #0a192f;
+  --bg-card: rgba(15, 23, 42, 0.6);
+  --text-primary: #ccd6f6;
+  --text-secondary: #8892b0;
+  --accent: #64ffda;
+  --border-color: rgba(100, 116, 139, 0.2);
+}
+
+/* --- Light Mode --- */
+html.light {
+  --bg-background: #f8fafc;
+  --bg-card: rgba(241, 245, 249, 0.8);
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --accent: #059669;
+  --border-color: rgba(148, 163, 184, 0.3);
+}
+
+html.light body {
+  background-color: var(--bg-background);
+  color: var(--text-primary);
+}
+
+html.light .bg-background {
+  background-color: var(--bg-background);
+}
+
+html.light .text-textPrimary {
+  color: var(--text-primary);
+}
+
+html.light .text-textSecondary {
+  color: var(--text-secondary);
+}
+
+html.light .text-accent {
+  color: var(--accent);
+}
+
+html.light .bg-accent {
+  background-color: var(--accent);
+}
+
+html.light .border-accent {
+  border-color: var(--accent);
+}
+
+html.light .text-accent\/80 {
+  color: rgba(5, 150, 105, 0.8);
+}
+
+html.light .text-accent\/90 {
+  color: rgba(5, 150, 105, 0.9);
+}
+
+html.light .bg-accent\/10 {
+  background-color: rgba(5, 150, 105, 0.1);
+}
+
+html.light .bg-accent\/5 {
+  background-color: rgba(5, 150, 105, 0.05);
+}
+
+html.light .border-accent\/20,
+html.light .border-accent\/30,
+html.light .border-accent\/50 {
+  border-color: rgba(5, 150, 105, 0.3);
+}
+
+html.light .hover\:border-accent\/50:hover {
+  border-color: rgba(5, 150, 105, 0.5);
+}
+
+html.light .hover\:text-accent:hover {
+  color: var(--accent);
+}
+
+html.light .hover\:bg-accent\/10:hover {
+  background-color: rgba(5, 150, 105, 0.1);
+}
+
+html.light .text-white {
+  color: #0f172a;
+}
+
+html.light .glass-card {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+html.light .glass-card:hover {
+  background: rgba(226, 232, 240, 0.8);
+  border-color: rgba(5, 150, 105, 0.3);
+}
+
+html.light .gradient-text {
+  background: linear-gradient(135deg, #0f172a 0%, #059669 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+html.light .stat-badge {
+  background: linear-gradient(135deg, rgba(5, 150, 105, 0.1), rgba(5, 150, 105, 0.05));
+  border-color: rgba(5, 150, 105, 0.2);
+}
+
+html.light .bg-slate-800,
+html.light .bg-slate-800\/50,
+html.light .bg-slate-800\/40,
+html.light .bg-slate-800\/80 {
+  background-color: rgba(241, 245, 249, 0.8);
+}
+
+html.light .border-slate-700,
+html.light .border-slate-700\/50,
+html.light .border-slate-800 {
+  border-color: rgba(203, 213, 225, 0.6);
+}
+
+html.light .bg-slate-900 {
+  background-color: #f1f5f9;
+}
+
+html.light .bg-slate-900\/90 {
+  background-color: rgba(241, 245, 249, 0.95);
+}
+
+html.light .hover\:text-white:hover {
+  color: #0f172a;
+}
+
+html.light .bg-emerald-900\/30 {
+  background-color: rgba(236, 253, 245, 0.8);
+}
+
+html.light .border-emerald-500\/30 {
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+html.light .text-emerald-400,
+html.light .text-emerald-300 {
+  color: #059669;
+}
+
+html.light .bg-emerald-900\/20 {
+  background-color: rgba(236, 253, 245, 0.6);
+}
+
+html.light .border-emerald-500\/20 {
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+html.light .hover\:shadow-accent\/20:hover {
+  --tw-shadow-color: rgba(5, 150, 105, 0.2);
+}
+
+html.light ::selection {
+  background: rgba(5, 150, 105, 0.2);
+  color: #059669;
+}
+
+html.light ::-webkit-scrollbar-thumb {
+  background: rgba(5, 150, 105, 0.3);
+}
+
+html.light ::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+/* =========================================
+   BASE STYLES (shared dark+light)
+   ========================================= */
+
 body {
   @apply bg-background text-textPrimary font-sans;
 }
@@ -10,9 +186,83 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Selection styling */
+::selection {
+  background: rgba(100, 255, 218, 0.2);
+  color: #64ffda;
+}
 
-/* Ocultar scroll visible pero permitir scroll funcional */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 0px;
-  background: transparent;
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a192f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 255, 218, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 255, 218, 0.5);
+}
+
+/* Glassmorphism card utility */
+.glass-card {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(100, 116, 139, 0.2);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  background: rgba(15, 23, 42, 0.8);
+  border-color: rgba(100, 255, 218, 0.3);
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, #ccd6f6 0%, #64ffda 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gradient border on hover */
+.gradient-border {
+  position: relative;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(100, 255, 218, 0.4), rgba(100, 116, 139, 0.2));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gradient-border:hover::before {
+  opacity: 1;
+}
+
+/* Stats badge */
+.stat-badge {
+  background: linear-gradient(135deg, rgba(100, 255, 218, 0.1), rgba(100, 255, 218, 0.05));
+  border: 1px solid rgba(100, 255, 218, 0.2);
+}
+
+/* Focus glow for inputs */
+input:focus, textarea:focus {
+  box-shadow: 0 0 0 2px rgba(100, 255, 218, 0.15);
 }
