@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Toaster } from "sonner";
-import { motion, useScroll, useSpring } from "framer-motion";
+import { motion, useScroll, useSpring, AnimatePresence } from "framer-motion";
 import "./index.css";
 import { content } from "./data";
 
