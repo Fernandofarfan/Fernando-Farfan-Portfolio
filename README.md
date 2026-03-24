@@ -1,4 +1,4 @@
-# Fernando Farfan - Portfolio Web 🌐 (v1.1.0)
+# Fernando Farfan - Portfolio Web 🌐 (v1.3.5)
 
 Bienvenido/a a mi portafolio personal como **Desarrollador Full Stack** y **Data Analyst**. Este proyecto fue creado con el objetivo de mostrar mi experiencia, habilidades y proyectos desarrollados en diversas tecnologías web y de análisis de datos.
 
