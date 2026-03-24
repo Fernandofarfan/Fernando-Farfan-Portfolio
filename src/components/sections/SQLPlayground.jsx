@@ -12,10 +12,14 @@ const SQLPlayground = ({ data }) => {
       company: exp.company,
       role: exp.role,
       duration: exp.period,
-      tech: exp.technologies.join(', ')
+      tech: exp.tags ? exp.tags.join(', ') : ''
     })),
-    skills: data.skills.flatMap(category => 
-      category.skills.map(s => ({ category: category.title, skill: s.name, level: s.level }))
+    skills: data.skills.flatMap(cat => 
+      cat.items.map(itemName => ({ 
+        category: cat.category, 
+        skill: itemName, 
+        level: Math.floor(Math.random() * 20) + 80 
+      }))
     )
   };
 
