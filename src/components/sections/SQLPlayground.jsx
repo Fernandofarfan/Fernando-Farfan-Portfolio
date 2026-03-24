@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import Section from '../Section';
 import { Database, Play, AlertCircle } from 'lucide-react';
+import { useLogger } from '../../context/LogContext';
 
 const SQLPlayground = ({ data }) => {
   const [query, setQuery] = useState("SELECT * FROM experience WHERE role LIKE '%Backend%';");
   const [results, setResults] = useState(null);
   const [error, setError] = useState(null);
+  const { addLog } = useLogger();
 
   const mockDb = {
     experience: data.experience.map(exp => ({
@@ -26,6 +28,7 @@ const SQLPlayground = ({ data }) => {
   const handleRunQuery = () => {
     setError(null);
     const lowerQuery = query.toLowerCase();
+    addLog(`Ejecutando SQL: ${query}`, 'info');
 
     try {
       if (lowerQuery.includes('drop') || lowerQuery.includes('delete') || lowerQuery.includes('update')) {

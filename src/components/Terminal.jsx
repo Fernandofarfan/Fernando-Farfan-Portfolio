@@ -1,10 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Terminal as TerminalIcon, X, Maximize2, Minimize2 } from 'lucide-react';
+import { useLogger } from '../context/LogContext';
 
 const Terminal = ({ data }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMaximized, setIsMaximized] = useState(false);
+  const { addLog } = useLogger();
   const [history, setHistory] = useState([
     { type: 'system', content: `Bienvenido a FFarfan OS v1.3.0. Escribe 'help' para ver los comandos disponibles.` }
   ]);
@@ -15,6 +17,7 @@ const Terminal = ({ data }) => {
   useEffect(() => {
     if (isOpen && inputRef.current) {
       inputRef.current.focus();
+      addLog('Sesión de CLI Terminal iniciada por el usuario.', 'system');
     }
   }, [isOpen]);
 
@@ -31,6 +34,7 @@ const Terminal = ({ data }) => {
     if (!trimmedCmd) return;
 
     setHistory(prev => [...prev, { type: 'command', content: `gfarfan@portfolio:~$ ${cmd}` }]);
+    addLog(`Ejecución de comando Terminal: ${trimmedCmd}`, 'info');
 
     switch (trimmedCmd) {
       case 'help':
@@ -41,14 +45,21 @@ Comandos disponibles:
   clear    - Limpia la consola
   contact  - Muestra mi información de contacto
   matrix   - Iniciar secuencia de simulación
+  ask      - Pregunta a la IA sobre Fernando
   sudo     - Ejecutar como superusuario
         `;
         break;
       case 'matrix':
-        document.body.classList.toggle('matrix-mode');
-        output = document.body.classList.contains('matrix-mode') 
-          ? `Wake up, Neo...\nThe Matrix has you.\n\n(Ejecuta 'matrix' nuevamente para volver a la realidad)` 
-          : `Desconectando de la Matrix... Volviendo a la realidad.`;
+        const isMatrix = document.body.classList.contains('matrix-mode');
+        if (isMatrix) {
+          document.body.classList.remove('matrix-mode');
+          output = 'Modo Matrix DESACTIVADO.';
+          addLog('Modo Matrix desactivado por el usuario', 'info');
+        } else {
+          document.body.classList.add('matrix-mode');
+          output = 'Modo Matrix ACTIVADO. Sigue al conejo blanco...';
+          addLog('Modo Matrix activado por el usuario', 'system');
+        }
         break;
       case 'whoami':
         output = `Desarrollador Full Stack | Backend Engineer | DBA\n+9 años transformando ideas en plataformas digitales de alto rendimiento.`;
@@ -70,7 +81,18 @@ Comandos disponibles:
         output = `Permiso denegado: Reclutador no autorizado para autodestruir el portafolio.`;
         break;
       default:
-        output = `Comando no encontrado: ${cmd}. Escribe 'help' para ver los comandos.`;
+        // Parse 'ask' command for AI Simulation
+        if (trimmedCmd.startsWith('ask ')) {
+          const query = trimmedCmd.replace('ask ', '').trim();
+          if (query) {
+            output = `[FFarfan-AI]: Fernando es un Ingeniero de Software Analítico enfocado en Arquitectura Cloud, Bases de Datos y Backend escalable. Su experiencia garantiza soluciones de alto rendimiento. (Simulación de IA sobre consulta: "${query}")`;
+            addLog(`Generando respuesta IA para: ${query}`, 'system');
+          } else {
+            output = "Debes proporcionar una consulta. Ejemplo: 'ask habilidades'";
+          }
+        } else {
+          output = `Comando no encontrado: ${trimmedCmd}. Escribe 'help' para ver los comandos.`;
+        }
     }
 
     setHistory(prev => [...prev, { type: 'output', content: output }]);

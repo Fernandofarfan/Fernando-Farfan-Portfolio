@@ -1,10 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Server, Activity, Database, Cpu } from 'lucide-react';
+import { Server, Activity, Database, Cpu, Plus, Minus, Layers } from 'lucide-react';
+import { useLogger } from '../../context/LogContext';
 
-const ServerStatusWidget = () => {
+const ServerStatusWidget = ({ replicas, setReplicas }) => {
+  const { addLog } = useLogger();
   const [cpuUsage, setCpuUsage] = useState(12);
   const [ramUsage, setRamUsage] = useState(45);
+
+  const handleAddReplica = () => {
+    if (replicas < 10) {
+      setReplicas(r => r + 1);
+      addLog(`Kubernetes: Escalando horizontalmente a ${replicas + 1} Pods.`, 'info');
+    }
+  };
+
+  const handleRemoveReplica = () => {
+    if (replicas > 1) {
+      setReplicas(r => r - 1);
+      addLog(`Kubernetes: Reduciendo clúster a ${replicas - 1} Pods.`, 'warn');
+    }
+  };
 
   // Simulate slight fluctuations in CPU and RAM to look realistic
   useEffect(() => {
@@ -81,6 +97,35 @@ const ServerStatusWidget = () => {
               animate={{ width: `${ramUsage}%` }}
               transition={{ ease: "easeInOut", duration: 1 }}
             />
+          </div>
+        </div>
+
+        {/* Kubernetes Replicas */}
+        <div className="pt-2 mt-2 border-t border-slate-800">
+          <div className="flex items-center justify-between text-[10px] font-mono mb-2">
+            <span className="text-slate-500 flex items-center gap-1.5"><Layers className="w-3 h-3"/> K8s Replicas</span>
+            <span className="text-emerald-400 font-bold">{replicas} Pods</span>
+          </div>
+          <div className="flex items-center justify-between gap-2">
+            <button 
+              onClick={handleRemoveReplica}
+              disabled={replicas <= 1}
+              className="flex-1 bg-slate-800 hover:bg-slate-700 disabled:opacity-50 disabled:cursor-not-allowed text-slate-300 p-1 rounded flex items-center justify-center transition-colors"
+            >
+              <Minus className="w-3 h-3" />
+            </button>
+            <div className="flex gap-0.5">
+              {[...Array(10)].map((_, i) => (
+                <div key={i} className={`w-1.5 h-3 rounded-sm transition-colors duration-500 ${i < replicas ? 'bg-emerald-500' : 'bg-slate-700'}`}></div>
+              ))}
+            </div>
+            <button 
+              onClick={handleAddReplica}
+              disabled={replicas >= 10}
+              className="flex-1 bg-slate-800 hover:bg-slate-700 disabled:opacity-50 disabled:cursor-not-allowed text-slate-300 p-1 rounded flex items-center justify-center transition-colors"
+            >
+              <Plus className="w-3 h-3" />
+            </button>
           </div>
         </div>
       </div>

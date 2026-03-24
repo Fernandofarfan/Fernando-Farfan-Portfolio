@@ -3,11 +3,13 @@ import Section from '../Section';
 import { toast } from 'sonner';
 import confetti from 'canvas-confetti';
 import { Send, Loader2, CheckCircle2, Terminal } from 'lucide-react';
+import { useLogger } from '../../context/LogContext';
 
 const Contact = ({ data }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [deployLogs, setDeployLogs] = useState([]);
+  const { addLog } = useLogger();
 
   const triggerConfetti = () => {
     const end = Date.now() + 2.5 * 1000;
@@ -40,6 +42,7 @@ const Contact = ({ data }) => {
     setIsSubmitting(true);
     setIsSuccess(false);
     setDeployLogs(['> Initializing deployment pipeline...']);
+    addLog('Ejecutando Pipeline CI/CD desde el formulario de contacto', 'system');
 
     const formData = new FormData(e.target);
     const formPayload = {

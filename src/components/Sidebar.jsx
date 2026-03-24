@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TypingAnimation from './TypingAnimation';
 import ParticlesBackground from './ParticlesBackground';
 import ServerStatusWidget from './sections/ServerStatusWidget';
 
 const Sidebar = ({ data, language, toggleLanguage, toggleTheme, isDark, activeSection }) => {
+  const [replicas, setReplicas] = useState(3);
   const navLinkClass = (section) =>
     `group flex items-center gap-3 hover:text-accent transition-all duration-300 py-1 ${activeSection === section ? 'text-accent font-bold' : ''}`;
 
@@ -14,7 +15,7 @@ const Sidebar = ({ data, language, toggleLanguage, toggleTheme, isDark, activeSe
 
   return (
     <aside className="relative col-span-12 md:col-span-4 md:sticky md:top-0 md:h-screen overflow-hidden md:overflow-y-auto p-6 md:p-8 flex flex-col md:justify-between bg-background z-10 custom-scrollbar-sidebar">
-      <ParticlesBackground isDark={isDark} />
+      <ParticlesBackground isDark={isDark} replicas={replicas} />
       <div className="text-center md:text-left">
         <div className="flex justify-between items-start mb-4">
           <div className="inline-block">
@@ -120,8 +121,8 @@ const Sidebar = ({ data, language, toggleLanguage, toggleTheme, isDark, activeSe
         </div>
         
         {/* Server Status Widget (Backend Vibe) */}
-        <div className="hidden md:block">
-          <ServerStatusWidget />
+        <div className="hidden md:block mb-6">
+          <ServerStatusWidget replicas={replicas} setReplicas={setReplicas} />
         </div>
       </div>
     </aside>
