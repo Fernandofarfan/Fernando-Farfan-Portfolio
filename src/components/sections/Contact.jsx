@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import Section from '../Section';
 import { toast } from 'sonner';
 import confetti from 'canvas-confetti';
-import { Send, Loader2, CheckCircle2 } from 'lucide-react';
+import { Send, Loader2, CheckCircle2, Terminal } from 'lucide-react';
 
 const Contact = ({ data }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [deployLogs, setDeployLogs] = useState([]);
 
   const triggerConfetti = () => {
     const end = Date.now() + 2.5 * 1000;
@@ -38,6 +39,7 @@ const Contact = ({ data }) => {
     e.preventDefault();
     setIsSubmitting(true);
     setIsSuccess(false);
+    setDeployLogs(['> Initializing deployment pipeline...']);
 
     const formData = new FormData(e.target);
     const formPayload = {
@@ -47,6 +49,15 @@ const Contact = ({ data }) => {
     };
 
     try {
+      await new Promise(r => setTimeout(r, 600));
+      setDeployLogs(prev => [...prev, '> Resolving destination DNS... [OK]']);
+      
+      await new Promise(r => setTimeout(r, 600));
+      setDeployLogs(prev => [...prev, '> Compiling message payload... [OK]']);
+
+      await new Promise(r => setTimeout(r, 600));
+      setDeployLogs(prev => [...prev, '> Opening SMTP secure connection...']);
+
       const email = import.meta.env.VITE_CONTACT_EMAIL || "test@example.com";
       const response = await fetch(`https://formsubmit.co/ajax/${email}`, {
         method: "POST",
@@ -58,6 +69,9 @@ const Contact = ({ data }) => {
       });
 
       if (response.ok || response.status === 200) {
+        setDeployLogs(prev => [...prev, '> Deployment successful! [STATUS 200]']);
+        await new Promise(r => setTimeout(r, 400));
+        
         toast.success(data.contact.title === 'Contacto' ? '¡Mensaje enviado con éxito!' : 'Message sent successfully!', {
           description: data.contact.title === 'Contacto' ? 'Gracias por contactarme. Te responderé a la brevedad posible.' : 'Thanks for reaching out! I will reply very soon.'
         });
@@ -66,12 +80,16 @@ const Contact = ({ data }) => {
         e.target.reset();
         
         // Reset success state after 5 seconds
-        setTimeout(() => setIsSuccess(false), 5000);
+        setTimeout(() => {
+          setIsSuccess(false);
+          setDeployLogs([]);
+        }, 5000);
       } else {
         throw new Error('Error en la respuesta del servidor');
       }
     } catch (error) {
       console.error('Error submitting form:', error);
+      setDeployLogs(prev => [...prev, '> Deployment FAILED [ERR_CONNECT]']);
       toast.error(data.contact.title === 'Contacto' ? 'Error al enviar' : 'Delivery Error', {
         description: data.contact.title === 'Contacto' ? 'Hubo un problema al enviar el mensaje. Por favor intenta de nuevo.' : 'There was an error sending the message. Please try again later.'
       });
@@ -106,16 +124,23 @@ const Contact = ({ data }) => {
               type="submit" 
               disabled={isSubmitting || isSuccess}
               className={`w-full font-bold py-3.5 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 text-sm shadow-lg ${
-                isSuccess 
-                  ? 'bg-emerald-500 text-white shadow-emerald-500/20' 
-                  : 'bg-gradient-to-r from-accent to-emerald-400 text-background hover:shadow-accent/20 hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0'
+                isSubmitting ? 'bg-slate-900 border border-slate-700 text-emerald-400 py-3 block text-left px-5 font-mono overflow-hidden'
+                : isSuccess ? 'bg-emerald-500 text-white shadow-emerald-500/20' 
+                : 'bg-gradient-to-r from-accent to-emerald-400 text-background hover:shadow-accent/20 hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0'
               }`}
             >
               {isSubmitting ? (
-                <>
-                  <Loader2 className="w-5 h-5 animate-spin" />
-                  {data.contact.title === 'Contacto' ? 'Enviando...' : 'Sending...'}
-                </>
+                <div className="w-full">
+                  <div className="flex items-center gap-2 mb-1.5 text-xs text-slate-500 border-b border-slate-800 pb-1.5">
+                    <Terminal className="w-3.5 h-3.5" /> CI/CD Pipeline
+                  </div>
+                  {deployLogs.map((log, i) => (
+                    <div key={i} className="text-xs text-emerald-400 leading-tight">
+                      {log}
+                    </div>
+                  ))}
+                  <div className="text-xs text-emerald-400 leading-tight animate-pulse">_</div>
+                </div>
               ) : isSuccess ? (
                 <>
                   <CheckCircle2 className="w-5 h-5 animate-bounce" />
