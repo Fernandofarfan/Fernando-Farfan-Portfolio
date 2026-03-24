@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import Particles from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
 
-const ParticlesBackground = ({ isDark }) => {
+const ParticlesBackground = ({ isDark, replicas = 3 }) => {
   const particlesInit = useCallback(async (engine) => {
     await loadSlim(engine);
   }, []);
@@ -54,7 +54,7 @@ const ParticlesBackground = ({ isDark }) => {
               default: "bounce",
             },
             random: false,
-            speed: 0.4,
+            speed: 0.2 * replicas, // Increases speed as replicas go up
             straight: false,
           },
           number: {
@@ -62,7 +62,7 @@ const ParticlesBackground = ({ isDark }) => {
               enable: true,
               area: 800,
             },
-            value: 60,
+            value: 20 * replicas, // Increases density as replicas go up
           },
           opacity: {
             value: isDark ? 0.3 : 0.6,

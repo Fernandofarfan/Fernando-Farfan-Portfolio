@@ -20,6 +20,11 @@ import Blog from "./components/sections/Blog";
 import GitHubStats from "./components/sections/GitHubStats";
 import Contact from "./components/sections/Contact";
 import Terminal from "./components/Terminal";
+import { LoggerProvider } from './context/LogContext';
+import LogViewer from './components/LogViewer';
+import GeoIPWidget from './components/GeoIPWidget';
+import useKonamiCode from './hooks/useKonamiCode';
+import SnakeGame from './components/SnakeGame';
 
 export default function App() {
   const [booting, setBooting] = useState(() => !sessionStorage.getItem('hasBooted_v1.3'));
@@ -35,6 +40,9 @@ export default function App() {
     damping: 30,
     restDelta: 0.001
   });
+
+  // Easter Egg Hook
+  const { isUnlocked: showSnake, resetKonami } = useKonamiCode();
 
   const data = content[language];
 
@@ -98,8 +106,9 @@ export default function App() {
 
   return (
     <>
-      <AnimatePresence>
-        {booting && (
+      <LoggerProvider>
+        <AnimatePresence>
+          {booting && (
           <BootSequence onComplete={() => setBooting(false)} />
         )}
       </AnimatePresence>
@@ -163,8 +172,16 @@ export default function App() {
 
       {/* Interactive CLI Terminal Widget */}
       <Terminal data={data} />
+      
+      <LogViewer />
+      <GeoIPWidget />
+      
+      {/* Konami Code Easter Egg */}
+      {showSnake && <SnakeGame onClose={resetKonami} />}
+      
     </main>
     )}
-  </>
+    </LoggerProvider>
+    </>
   );
 }
