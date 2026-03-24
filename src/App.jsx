@@ -5,11 +5,13 @@ import "./index.css";
 import { content } from "./data";
 
 // Components
+import BootSequence from "./components/BootSequence";
 import Sidebar from "./components/Sidebar";
 import MobileMenu from "./components/MobileMenu";
 import About from "./components/sections/About";
 import Experience from "./components/sections/Experience";
 import Education from "./components/sections/Education";
+import SQLPlayground from "./components/sections/SQLPlayground";
 import Projects from "./components/sections/Projects";
 import Certifications from "./components/sections/Certifications";
 import Testimonials from "./components/sections/Testimonials";
@@ -20,6 +22,7 @@ import Contact from "./components/sections/Contact";
 import Terminal from "./components/Terminal";
 
 export default function App() {
+  const [booting, setBooting] = useState(() => !sessionStorage.getItem('hasBooted_v1.3'));
   const [activeSection, setActiveSection] = useState("");
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -94,23 +97,31 @@ export default function App() {
   const toggleTheme = () => setIsDark(prev => !prev);
 
   return (
-    <main className="bg-background text-textPrimary font-sans min-h-screen transition-colors duration-300 relative">
-      <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 via-accent to-emerald-400 origin-left z-[100]"
-        style={{ scaleX }}
-      />
-      
-      <Toaster position="top-right" richColors />
-      <MobileMenu
-        mobileMenuOpen={mobileMenuOpen}
-        toggleMobileMenu={toggleMobileMenu}
-        language={language}
-        toggleLanguage={toggleLanguage}
-        toggleTheme={toggleTheme}
-        isDark={isDark}
-        activeSection={activeSection}
-        data={data}
-      />
+    <>
+      <AnimatePresence>
+        {booting && (
+          <BootSequence onComplete={() => setBooting(false)} />
+        )}
+      </AnimatePresence>
+
+      {!booting && (
+        <main className="bg-background text-textPrimary font-sans min-h-screen transition-colors duration-300 relative">
+          <motion.div
+            className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 via-accent to-emerald-400 origin-left z-[100]"
+            style={{ scaleX }}
+          />
+          
+          <Toaster position="top-right" richColors />
+          <MobileMenu
+            mobileMenuOpen={mobileMenuOpen}
+            toggleMobileMenu={toggleMobileMenu}
+            language={language}
+            toggleLanguage={toggleLanguage}
+            toggleTheme={toggleTheme}
+            isDark={isDark}
+            activeSection={activeSection}
+            data={data}
+          />
 
       <div className="grid grid-cols-12 max-w-6xl mx-auto">
         <Sidebar
@@ -126,6 +137,7 @@ export default function App() {
           <About data={data} />
           <Experience data={data} />
           <Education data={data} />
+          <SQLPlayground data={data} />
           <Projects data={data} />
           <Certifications data={data} />
           <Testimonials data={data} />
@@ -152,5 +164,7 @@ export default function App() {
       {/* Interactive CLI Terminal Widget */}
       <Terminal data={data} />
     </main>
+    )}
+  </>
   );
 }

@@ -40,8 +40,15 @@ Comandos disponibles:
   skills   - Lista mis tecnologías principales
   clear    - Limpia la consola
   contact  - Muestra mi información de contacto
+  matrix   - Iniciar secuencia de simulación
   sudo     - Ejecutar como superusuario
         `;
+        break;
+      case 'matrix':
+        document.body.classList.toggle('matrix-mode');
+        output = document.body.classList.contains('matrix-mode') 
+          ? `Wake up, Neo...\nThe Matrix has you.\n\n(Ejecuta 'matrix' nuevamente para volver a la realidad)` 
+          : `Desconectando de la Matrix... Volviendo a la realidad.`;
         break;
       case 'whoami':
         output = `Desarrollador Full Stack | Backend Engineer | DBA\n+9 años transformando ideas en plataformas digitales de alto rendimiento.`;
