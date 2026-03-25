@@ -16,7 +16,7 @@ export const content = {
     profile: {
       name: "Guillermo Fernando Farfan Romero",
       role: "Desarrollador Full Stack | Backend Engineer | DBA",
-      typingRoles: ["Desarrollador Full Stack", "Backend Engineer", "DBA", "Cloud-Native Architect"],
+      typingRoles: ["Senior Backend Engineer", "DBA", "FinOps Specialist", "GCP Solutions Architect"],
       avatarUrl: "https://github.com/Fernandofarfan.png",
       githubUsername: "Fernandofarfan",
       description: "+9 años transformando ideas en soluciones digitales escalables. Combino una sólida formación técnica en Sistemas de Información (UTN) con Relaciones Laborales (UBA). Especializado en arquitecturas Cloud-Native, automatización de procesos y bases de datos de alta disponibilidad.",
@@ -33,8 +33,8 @@ export const content = {
         instagram: "https://www.instagram.com/fernando.farfan07/",
         credly: "https://www.credly.com/users/fernando-farfan.855a5067/badges#credly"
       },
-      cvLinkEs: "/Fernando-Farfan-Portfolio/CV_Guillermo_Farfan_ES.pdf",
-      cvLinkEn: "/Fernando-Farfan-Portfolio/CV_Guillermo_Farfan_EN.pdf"
+      cvLinkEs: "/CV_Guillermo_Farfan_ES.pdf",
+      cvLinkEn: "/CV_Guillermo_Farfan_EN.pdf"
     },
     about: [
       "Soy <strong>Guillermo Fernando Farfan Romero</strong>, Desarrollador Full Stack & Backend Engineer con <strong>más de 9 años de experiencia</strong> en la industria tecnológica. Actualmente curso la <strong>Tecnicatura Universitaria en Sistemas de Información</strong> en la Universidad Tecnológica Nacional (UTN) y soy Licenciado en Relaciones Laborales por la Universidad de Buenos Aires (UBA).",
@@ -93,12 +93,12 @@ export const content = {
     ],
     projects: [
       {
-        title: "Autonomous-FinOps-Engine",
-        description: "Motor backend autónomo en Python que escanea entornos GCP detectando infraestructura ociosa y genera código IaC en Terraform para remediación.",
-        tech: "Python, GCP, Terraform",
+        title: "Autonomous FinOps Engine",
+        description: "Motor backend autónomo en Python que escanea entornos GCP detectando infraestructura ociosa y genera código IaC en Terraform para remediación automática de costos.",
+        tech: "Python, GCP, Terraform, FinOps, Cloud-Native",
         link: "https://github.com/ffarfan-labs/Autonomous-FinOps-Engine",
         featured: true,
-        category: "Cloud/DevOps"
+        category: "Cloud / FinOps"
       },
       {
         title: "Monitor-CI-CD",
@@ -324,7 +324,7 @@ export const content = {
     profile: {
       name: "Guillermo Fernando Farfan Romero",
       role: "Full Stack Developer | Backend Engineer | DBA",
-      typingRoles: ["Full Stack Developer", "Backend Engineer", "DBA", "Cloud-Native Architect"],
+      typingRoles: ["Senior Backend Engineer", "DBA", "FinOps Specialist", "GCP Solutions Architect"],
       avatarUrl: "https://github.com/Fernandofarfan.png",
       githubUsername: "Fernandofarfan",
       description: "+9 years transforming ideas into scalable digital solutions. I combine a solid technical background in Information Systems (UTN) with Labor Relations (UBA). Specialized in Cloud-Native architectures, process automation, and high-availability databases.",
@@ -341,8 +341,8 @@ export const content = {
         instagram: "https://www.instagram.com/fernando.farfan07/",
         credly: "https://www.credly.com/users/fernando-farfan.855a5067/badges#credly"
       },
-      cvLinkEs: "/Fernando-Farfan-Portfolio/CV_Guillermo_Farfan_ES.pdf",
-      cvLinkEn: "/Fernando-Farfan-Portfolio/CV_Guillermo_Farfan_EN.pdf"
+      cvLinkEs: "/CV_Guillermo_Farfan_ES.pdf",
+      cvLinkEn: "/CV_Guillermo_Farfan_EN.pdf"
     },
     about: [
       "I am <strong>Guillermo Fernando Farfan Romero</strong>, a Full Stack Developer & Backend Engineer with <strong>over 9 years of experience</strong> in the tech industry. I am currently pursuing a <strong>University Technician degree in Information Systems</strong> at the National Technological University (UTN) and hold a degree in Labor Relations from the University of Buenos Aires (UBA).",
@@ -401,12 +401,12 @@ export const content = {
     ],
     projects: [
       {
-        title: "Autonomous-FinOps-Engine",
-        description: "Autonomous backend engine in Python that scans GCP environments detecting idle infrastructure and generates IaC code in Terraform for remediation.",
-        tech: "Python, GCP, Terraform",
+        title: "Autonomous FinOps Engine",
+        description: "Autonomous backend engine in Python that scans GCP environments detecting idle infrastructure and generates IaC code in Terraform for automatic cost remediation.",
+        tech: "Python, GCP, Terraform, FinOps, Cloud-Native",
         link: "https://github.com/ffarfan-labs/Autonomous-FinOps-Engine",
         featured: true,
-        category: "Cloud/DevOps"
+        category: "Cloud / FinOps"
       },
       {
         title: "Monitor CI/CD",
