@@ -61,12 +61,11 @@ const Contact = ({ data }) => {
       await new Promise(r => setTimeout(r, 600));
       setDeployLogs(prev => [...prev, '> Opening SMTP secure connection...']);
 
-      const email = import.meta.env.VITE_CONTACT_EMAIL || "test@example.com";
-      const response = await fetch(`https://formsubmit.co/ajax/${email}`, {
+      const pageclipUrl = "https://send.pageclip.co/83aEvugDvi52U8eu3bb3L3UdW4wj9jeZ";
+      const response = await fetch(pageclipUrl, {
         method: "POST",
         headers: { 
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify(formPayload)
       });
@@ -107,7 +106,7 @@ const Contact = ({ data }) => {
         <div>
           <p className="text-textSecondary mb-8 text-base leading-relaxed">{data.contact.description}</p>
           
-          <form onSubmit={handleSubmit} className="space-y-5">
+          <form onSubmit={handleSubmit} className="space-y-5 pageclip-form">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div>
                 <label htmlFor="name" className="block text-xs font-medium text-textSecondary mb-2 uppercase tracking-wider">{data.contact.nameLabel}</label>
