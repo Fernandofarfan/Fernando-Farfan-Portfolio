@@ -70,7 +70,7 @@ const Projects = ({ data }) => {
             <div className="bg-[#161b22] px-4 py-2 flex items-center justify-between border-b border-slate-700 select-none">
               <div className="flex items-center gap-3">
                 <span className="text-emerald-400 font-mono text-xs font-bold bg-emerald-500/10 px-2 py-0.5 rounded">GET</span>
-                <span className="text-slate-400 font-mono text-xs">https://api.ffarfan.dev/v1/projects?category={filter.toLowerCase()}</span>
+                <span className="text-slate-400 font-mono text-xs">https://api.gfarfan.dev/v1/projects?category={filter.toLowerCase()}</span>
               </div>
               <span className="text-slate-500 font-mono text-xs hidden md:block">Status: 200 OK</span>
             </div>
