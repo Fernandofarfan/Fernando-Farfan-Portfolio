@@ -37,6 +37,9 @@ const Testimonials = ({ data }) => {
               <div>
                 <h4 className="text-white font-semibold text-sm">{testimonial.name}</h4>
                 <p className="text-xs text-accent">{testimonial.role}</p>
+                {testimonial.company && (
+                  <p className="text-xs text-textSecondary/70 mt-0.5">{testimonial.company}</p>
+                )}
                 <p className="text-[11px] text-textSecondary mt-0.5">{testimonial.relation} · {testimonial.date}</p>
               </div>
             </div>

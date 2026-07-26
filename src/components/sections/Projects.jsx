@@ -109,7 +109,7 @@ const Projects = ({ data }) => {
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-accent/20 via-emerald-500/10 to-accent/20 rounded-xl"></div>
                   <div className="relative m-[1px] bg-slate-900/90 backdrop-blur-xl rounded-xl p-6 h-full border border-transparent group-hover:border-accent/30 transition-colors">
-                    <div className="flex items-center gap-2 mb-3">
+                    <div className="flex items-center gap-2 mb-3 flex-wrap">
                       <span className="text-[10px] font-mono text-accent bg-accent/10 px-2 py-0.5 rounded-full border border-accent/20 uppercase tracking-wider">
                         ⭐ {data.nav.projects === 'Proyectos' ? 'Proyecto Destacado' : 'Featured Project'}
                       </span>
@@ -118,12 +118,26 @@ const Projects = ({ data }) => {
                           {featuredProject.category}
                         </span>
                       )}
+                      {featuredProject.hackathon && (
+                        <span className="text-[10px] font-mono text-yellow-400/90 bg-yellow-500/10 border border-yellow-500/30 px-2 py-0.5 rounded-full uppercase tracking-wider">
+                          🏆 {featuredProject.hackathon}
+                        </span>
+                      )}
                     </div>
                     <div className="flex justify-between items-start mb-2">
                       <h4 className="text-xl md:text-2xl font-bold text-white group-hover:text-accent transition-colors duration-300">
                         {featuredProject.title}
                       </h4>
-                      <ExternalLink className="h-5 w-5 text-textSecondary group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
+                      <a
+                        href={featuredProject.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        title="Ver en GitHub"
+                        className="p-1 hover:bg-slate-800 rounded transition-colors"
+                      >
+                        <ExternalLink className="h-5 w-5 text-textSecondary group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
+                      </a>
                     </div>
                     <p className="text-textSecondary text-sm mb-5 leading-relaxed">{featuredProject.description}</p>
                     <div className="flex flex-wrap gap-2 mt-auto">
@@ -162,7 +176,16 @@ const Projects = ({ data }) => {
                             {project.title}
                           </h4>
                         </div>
-                        <ExternalLink className="h-4 w-4 text-textSecondary group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 flex-shrink-0" />
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          title="Ver en GitHub"
+                          className="p-1 hover:bg-slate-800 rounded transition-colors flex-shrink-0"
+                        >
+                          <ExternalLink className="h-4 w-4 text-textSecondary group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 flex-shrink-0" />
+                        </a>
                       </div>
                       
                       {project.category && (
@@ -189,7 +212,28 @@ const Projects = ({ data }) => {
         )}
       </AnimatePresence>
 
-      <div className="mt-8 text-center md:text-left">
+      {/* Hackathons strip */}
+      {data.hackathons && data.hackathons.length > 0 && (
+        <div className="mt-8 glass-card rounded-xl p-5">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-base">🏆</span>
+            <h4 className="text-sm font-semibold text-white uppercase tracking-wider">
+              {data.nav.projects === 'Proyectos' ? 'Participación en Hackathons' : 'Hackathon Participation'}
+            </h4>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            {data.hackathons.map((h, i) => (
+              <div key={i} className="flex items-center gap-2 bg-yellow-500/5 border border-yellow-500/20 rounded-lg px-3 py-2">
+                <span className="text-yellow-400 font-bold text-xs font-mono">{h.year}</span>
+                <span className="text-white text-xs font-medium">{h.name}</span>
+                <span className="text-textSecondary text-[11px]">— {h.project}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <div className="mt-6 text-center md:text-left">
         <a href="https://github.com/Fernandofarfan?tab=repositories" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-white hover:text-accent transition-colors group text-sm font-mono border-b border-white hover:border-accent pb-0.5">
           <span>{data.nav.projects === 'Proyectos' ? 'Ver todos los repositorios en GitHub' : 'View all repositories on GitHub'}</span>
           <ExternalLink className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
