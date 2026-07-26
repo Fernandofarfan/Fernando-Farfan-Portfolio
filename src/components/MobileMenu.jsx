@@ -43,10 +43,10 @@ const MobileMenu = ({ mobileMenuOpen, toggleMobileMenu, language, toggleLanguage
 
           {/* Dual CV buttons */}
           <div className="flex flex-col gap-3 mt-4 w-48">
-            <a href={data.profile.cvLinkEs} download className="px-5 py-2.5 bg-accent text-background font-bold rounded-full text-center text-sm">
+            <a href={data.profile.cvLinkEs} download target="_blank" rel="noopener noreferrer" className="px-5 py-2.5 bg-accent text-background font-bold rounded-full text-center text-sm">
               {data.profile.downloadCvEs}
             </a>
-            <a href={data.profile.cvLinkEn} download className="px-5 py-2.5 border border-accent/50 text-accent font-bold rounded-full text-center text-sm hover:bg-accent/10 transition-colors">
+            <a href={data.profile.cvLinkEn} download target="_blank" rel="noopener noreferrer" className="px-5 py-2.5 border border-accent/50 text-accent font-bold rounded-full text-center text-sm hover:bg-accent/10 transition-colors">
               {data.profile.downloadCvEn}
             </a>
           </div>
