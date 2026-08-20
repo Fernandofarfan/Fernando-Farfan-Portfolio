@@ -43,7 +43,7 @@ export const content = {
       cvLinkEn: "/CV/Guillermo_Farfan_CV_EN.pdf"
     },
     about: [
-      "Soy <strong>Guillermo Fernando Farfan Romero</strong>, Python Backend Engineer & Cloud Solutions Architect con <strong>más de 8 años de experiencia</strong> en la industria tecnológica. Actualmente curso la <strong>Tecnicatura Universitaria en Sistemas de Información</strong> en la Universidad Tecnológica Nacional (UTN) y soy Licenciado en Relaciones Laborales por la Universidad de Buenos Aires (UBA).",
+      "Soy <strong>Guillermo Fernando Farfan Romero</strong>, Python Backend Engineer & Cloud Solutions Architect con <strong>más de 8 años de experiencia</strong> en la industria tecnológica. Actualmente curso la <strong>Tecnicatura Universitaria en Sistemas de Información</strong> en la Universidad Tecnológica Nacional (UTN) y cuento con estudios universitarios avanzados en Relaciones del Trabajo por la Universidad de Buenos Aires (UBA).",
       "Mi especialización abarca <strong>migraciones cloud corporativas a GCP</strong> (lift-and-shift con M4CE, Terraform, GKE), diseño de <strong>APIs REST/GraphQL de alta concurrencia</strong> con Python (FastAPI, Django) y Java (Spring Boot), y <strong>observabilidad avanzada con IBM Instana APM</strong>. He liderado proyectos para Grupo Ramos, Junta de Beneficencia de Guayaquil, Ecovalores/Matriz OMS y Ganfeng Lithium.",
       "Cuento con más de <strong>24 certificaciones profesionales</strong> emitidas por IBM, Meta, Google y Microsoft, y participación activa como desarrollador backend en hackathons desde 2022 (Aleph, Avalanche LatAm, PunaTech, NASA Space Apps Challenge). Busco desafíos donde pueda aplicar mi experiencia en <strong>backend engineering, cloud architecture y DevOps</strong> para construir soluciones que generen impacto real."
     ],
@@ -120,7 +120,7 @@ export const content = {
         description: "Formación técnica avanzada en desarrollo de software, arquitectura de sistemas, bases de datos relacionales, estructuras de datos, algoritmos y metodologías ágiles. Orientación en Java, Python y diseño de software."
       },
       {
-        title: "Licenciatura en Relaciones del Trabajo",
+        title: "Licenciatura en Relaciones del Trabajo (Cursada Avanzada)",
         institution: "Universidad de Buenos Aires (UBA)",
         period: "2016 - 2024",
         description: "Formación en gestión de recursos humanos, psicología del trabajo, derecho laboral y administración organizacional. Esta dualidad me permite alinear la tecnología con las dinámicas y objetivos del negocio."
@@ -447,7 +447,7 @@ export const content = {
       cvLinkEn: "/CV/Guillermo_Farfan_CV_EN.pdf"
     },
     about: [
-      "I am <strong>Guillermo Fernando Farfan Romero</strong>, a Python Backend Engineer & Cloud Solutions Architect with <strong>over 8 years of experience</strong> in the tech industry. I am currently pursuing a <strong>University Technician degree in Information Systems</strong> at the National Technological University (UTN) and hold a degree in Labor Relations from the University of Buenos Aires (UBA).",
+      "I am <strong>Guillermo Fernando Farfan Romero</strong>, a Python Backend Engineer & Cloud Solutions Architect with <strong>over 8 years of experience</strong> in the tech industry. I am currently pursuing a <strong>University Technician degree in Information Systems</strong> at the National Technological University (UTN) and hold advanced university coursework in Labor Relations from the University of Buenos Aires (UBA).",
       "My specialization covers <strong>corporate cloud migrations to GCP</strong> (lift-and-shift with M4CE, Terraform, GKE), design of <strong>high-concurrency REST/GraphQL APIs</strong> with Python (FastAPI, Django) and Java (Spring Boot), and <strong>advanced observability with IBM Instana APM</strong>. I have led projects for Grupo Ramos, Junta de Beneficencia de Guayaquil, Ecovalores/OMS Matrix, and Ganfeng Lithium.",
       "I hold over <strong>24 professional certifications</strong> from IBM, Meta, Google, and Microsoft, and have actively participated as a backend developer in hackathons since 2022 (Aleph, Avalanche LatAm, PunaTech, NASA Space Apps Challenge). I seek challenges where I can apply my expertise in <strong>backend engineering, cloud architecture, and DevOps</strong> to build solutions that generate real impact."
     ],
@@ -524,7 +524,7 @@ export const content = {
         description: "Advanced technical training in software development, systems architecture, relational databases, data structures, algorithms, and agile methodologies. Focus on Java, Python, and software design."
       },
       {
-        title: "Bachelor's Degree in Labor Relations",
+        title: "Bachelor's Studies in Labor Relations (Advanced Coursework)",
         institution: "University of Buenos Aires (UBA)",
         period: "2016 - 2024",
         description: "Training in human resources management, work psychology, labor law, and organizational administration. This dual background allows me to align technology with business dynamics and objectives."
