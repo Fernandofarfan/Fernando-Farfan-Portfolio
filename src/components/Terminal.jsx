@@ -62,17 +62,17 @@ Comandos disponibles:
         }
         break;
       case 'whoami':
-        output = `Desarrollador Full Stack | Backend Engineer | DBA\n+9 años transformando ideas en plataformas digitales de alto rendimiento.`;
+        output = `Senior Cloud Solutions Architect & Tech Lead | Virtualization & Migrations Specialist\nPython (FastAPI), GCP, Azure, Hyper-V 2025, Kubernetes, Terraform & FinOps | +8 años de experiencia.`;
         break;
       case 'skills':
-        output = `Backend: Node.js, Python, Java\nDatabases: SQL Server, PostgreSQL, MongoDB\nCloud/DevOps: Docker, CI/CD, Linux\nFrontend: React, Tailwind CSS`;
+        output = `Cloud & Infra: GCP, Microsoft Azure, Hyper-V 2025 (SET 40G, SAN 55TB), VMware vSphere, Terraform, GKE, ArgoCD, Veeam VBR\nBackend: Python (FastAPI, Celery, SQLAlchemy 2.0), Java (Spring Boot), TypeScript, Node.js\nDatabases: PostgreSQL (pgvector), SQL Server, SAP HANA IaaS, BigQuery, Redis\nObservability: IBM Instana APM, OpenTelemetry (OTel), Zabbix, FinOps`;
         break;
       case 'clear':
         setHistory([]);
         setInput('');
         return;
       case 'contact':
-        output = `Email: fernando@example.com\nGitHub: github.com/Fernandofarfan\nLinkedIn: linkedin.com/in/fernando-farfan`;
+        output = `Email: fernando.farfan16@gmail.com\nGitHub: github.com/Fernandofarfan\nLinkedIn: linkedin.com/in/guillermo-farfan\nWeb: https://gfarfan.dev\nWhatsApp: +54 9 11 2187-1473`;
         break;
       case 'sudo':
         output = `ffarfan is not in the sudoers file. This incident will be reported.`;
