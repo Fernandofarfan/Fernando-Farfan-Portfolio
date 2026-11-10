@@ -48,11 +48,11 @@ export const content = {
     ],
     experience: [
       {
-        role: "Senior Python Backend & Financial Automation Engineer",
+        role: "Senior Python Backend & Automation Engineer",
         company: "Reforest Latam",
         period: "Mayo 2026 - Actualidad",
-        description: "Diseñé y desarrollé de punta a punta la plataforma operativa y bot transaccional financiero en Python 3.11+ (aiogram 3.x, asyncio, Pydantic) con máquina de estados (FSM) persistida en Redis (events_isolation anti doble-clic), precisión contable (Decimal ROUND_HALF_UP), control RBAC fail-closed e integración con Baserow y Google Drive API. Construí el motor de conciliación bancaria atómica multimoneda con parsers nativos de extractos PDF/CSV/Excel (BBVA, Galicia, Macro, Mercury, Balanz), deduplicación SHA-256, rollback por lote, tipo de cambio histórico Dólar MEP (fallback regresivo T-1 a T-5) y exportación ARCA; integré OCR e IA dual (Gemini 2.5 Flash y DeepSeek vía OpenRouter) en chunks concurrentes con semáforos, desplegado en VPS Linux con Docker Compose y CI/CD en GitHub Actions (Ruff + 514 tests de integración en Pytest).",
-        tags: ["Python 3.11+", "aiogram 3.x", "Asyncio", "Redis FSM", "Pydantic", "Baserow API", "Google Drive API", "Gemini / DeepSeek OCR", "Docker Compose", "Pytest (514 tests)", "GitHub Actions", "Ruff"]
+        description: "Diseño y desarrollo de servicios backend asíncronos y automatización de flujos financieros en Python 3.11+ (asyncio, aiogram, Pydantic) con máquinas de estados (FSM) persistidas en Redis, control de concurrencia, RBAC e integraciones vía APIs REST. Desarrollo de motores de conciliación multimoneda con procesamiento batch y rollback transaccional, extracción documental automatizada mediante OCR e IA (LLMs), despliegue contenedorizado en Linux con Docker Compose y pipelines CI/CD en GitHub Actions con análisis estático (Ruff) y pruebas automatizadas en Pytest.",
+        tags: ["Python 3.11+", "Asyncio", "Redis FSM", "Pydantic", "REST APIs", "LLM / OCR", "Docker Compose", "Pytest", "GitHub Actions", "Ruff", "Linux"]
       },
       {
         role: "Senior Cloud Architect, Infrastructure & Software Consultant",
@@ -447,11 +447,11 @@ export const content = {
     ],
     experience: [
       {
-        role: "Senior Python Backend & Financial Automation Engineer",
+        role: "Senior Python Backend & Automation Engineer",
         company: "Reforest Latam",
         period: "May 2026 - Present",
-        description: "Architected and developed end-to-end the core financial operations platform and transactional Telegram bot in Python 3.11+ (aiogram 3.x, asyncio, Pydantic) featuring Redis-persisted FSM state management (events_isolation double-click protection), exact decimal accounting (ROUND_HALF_UP), fail-closed RBAC, and Baserow / Google Drive API integration. Built an atomic multi-currency bank reconciliation engine with native PDF/CSV/Excel statement parsers (BBVA, Galicia, Macro, Mercury, Balanz), SHA-256 deduplication, batch rollback, historical MEP exchange rate lookup (T-1 to T-5 business-day fallback), and ARCA tax exports; integrated dual LLM OCR & classification (Gemini 2.5 Flash and DeepSeek via OpenRouter) with semaphore-bounded chunking, deployed on Linux VPS via Docker Compose and GitHub Actions CI/CD (Ruff + 514 passing Pytest integration tests).",
-        tags: ["Python 3.11+", "aiogram 3.x", "Asyncio", "Redis FSM", "Pydantic", "Baserow API", "Google Drive API", "Gemini / DeepSeek OCR", "Docker Compose", "Pytest (514 tests)", "GitHub Actions", "Ruff"]
+        description: "Designing and developing asynchronous backend services and financial workflow automation in Python 3.11+ (asyncio, aiogram, Pydantic) featuring Redis-persisted finite state machines (FSM), concurrency control, RBAC, and REST API integrations. Built multi-currency reconciliation engines with batch processing and transactional rollback, automated document extraction via OCR and LLMs, containerized Linux deployments with Docker Compose, and GitHub Actions CI/CD pipelines with static analysis (Ruff) and automated integration testing in Pytest.",
+        tags: ["Python 3.11+", "Asyncio", "Redis FSM", "Pydantic", "REST APIs", "LLM / OCR", "Docker Compose", "Pytest", "GitHub Actions", "Ruff", "Linux"]
       },
       {
         role: "Senior Cloud Architect, Infrastructure & Software Consultant",
