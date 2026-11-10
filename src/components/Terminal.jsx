@@ -62,10 +62,10 @@ Comandos disponibles:
         }
         break;
       case 'whoami':
-        output = `Senior Cloud Solutions Architect & Tech Lead | Backend & Data Infrastructure\nPython (FastAPI), GCP, Kubernetes, Terraform, PostgreSQL & FinOps | +8 años de experiencia.`;
+        output = `Senior Cloud Solutions Architect & Tech Lead | Infrastructure, Virtualization & Backend\nPython (FastAPI), GCP, Azure, Hyper-V, Kubernetes, Terraform & FinOps | +8 años de experiencia.`;
         break;
       case 'skills':
-        output = `Cloud & Infra: GCP, Microsoft Azure, Terraform, GKE Autopilot, Cloud Run, ArgoCD, Docker\nBackend: Python (FastAPI, Celery, SQLAlchemy 2.0), Java (Spring Boot), TypeScript, Node.js\nDatabases: PostgreSQL (pgvector), SQL Server, BigQuery, Redis, MongoDB\nObservability: OpenTelemetry (OTel), Prometheus, Grafana, FinOps`;
+        output = `Cloud & Infra: GCP, Microsoft Azure, Hyper-V, VMware vSphere, SAN FC, Terraform, GKE Autopilot, ArgoCD, Veeam VBR\nBackend: Python (FastAPI, Celery, SQLAlchemy 2.0), Java (Spring Boot), TypeScript, Node.js\nDatabases: PostgreSQL (pgvector), SQL Server AlwaysOn, SAP HANA IaaS, BigQuery, Redis\nObservability: OpenTelemetry (OTel), IBM Instana APM, Zabbix, Prometheus, Grafana, FinOps`;
         break;
       case 'clear':
         setHistory([]);

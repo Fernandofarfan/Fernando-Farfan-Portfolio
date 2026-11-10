@@ -14,17 +14,17 @@ export const content = {
     },
     profile: {
       name: "Guillermo Fernando Farfan Romero",
-      role: "Senior Cloud Architect & Software Engineer | Tech Lead | GCP, Kubernetes, Python & Terraform",
+      role: "Senior Cloud Architect & Software Engineer | Tech Lead | GCP, Azure, Virtualization, Python & Terraform",
       typingRoles: [
         "Senior Cloud Solutions Architect",
         "Technical Lead",
+        "Cloud & Virtualization Specialist",
         "Senior Python Backend Engineer",
-        "DevOps & FinOps Specialist",
         "DBA & Data Infrastructure Lead"
       ],
       avatarUrl: "https://github.com/Fernandofarfan.png",
       githubUsername: "Fernandofarfan",
-      description: "Senior Cloud Solutions Architect, Backend Engineer & Tech Lead con más de 8 años de experiencia diseñando arquitecturas cloud-native resilientes en Google Cloud Platform (GCP), automatización con Terraform (IaC), bases de datos de alta disponibilidad y microservicios asíncronos de alta concurrencia en Python (FastAPI). Combino formación en Sistemas (UTN) y Relaciones del Trabajo (UBA) para dirigir equipos de ingeniería alineando excelencia técnica, cultura ágil y objetivos de negocio.",
+      description: "Senior Cloud Solutions Architect, Infrastructure Specialist & Tech Lead con más de 8 años de experiencia diseñando arquitecturas cloud-native e híbridas en Google Cloud Platform (GCP) y Microsoft Azure, virtualización enterprise (Hyper-V, VMware vSphere, Nutanix AHV), automatización con Terraform (IaC), bases de datos de alta disponibilidad y microservicios asíncronos en Python (FastAPI). Combino formación en Sistemas (UTN) y Relaciones del Trabajo (UBA) para dirigir equipos de ingeniería alineando excelencia técnica, cultura ágil y objetivos de negocio.",
       email: "fernando.farfan16@gmail.com",
       location: "Salta / Buenos Aires, Argentina (UTC-3 · Remoto / Relocalización)",
       status: "Disponible para trabajar",
@@ -42,9 +42,9 @@ export const content = {
       cvLinkEn: "/CV/Guillermo_Farfan_CV_EN.pdf"
     },
     about: [
-      "Soy <strong>Guillermo Fernando Farfan Romero</strong>, Senior Cloud Solutions Architect, Backend Engineer & Tech Lead con <strong>más de 8 años de experiencia</strong> en diseño de arquitecturas de misión crítica, ingeniería de datos y microservicios backend. Actualmente curso la <strong>Tecnicatura Universitaria en Sistemas de Información</strong> en la Universidad Tecnológica Nacional (UTN) y cuento con estudios universitarios avanzados en Relaciones del Trabajo por la Universidad de Buenos Aires (UBA).",
-      "Mi especialización abarca <strong>arquitectura cloud-native, automatización IaC y plataformas distribuidas</strong>: diseño de infraestructuras escalables en Google Cloud Platform con Terraform, orquestación de contenedores en Kubernetes (GKE Autopilot) y Cloud Run mediante pipelines GitOps con GitHub Actions y ArgoCD, y observabilidad distribuida full-stack con OpenTelemetry, Prometheus y Grafana garantizando alta disponibilidad (SLA 99.9%).",
-      "En el área de backend y datos, desarrollo microservicios asíncronos de alta concurrencia con <strong>Python (FastAPI, Celery, SQLAlchemy 2.0, Redis)</strong>, Java (Spring Boot) y TypeScript, administración avanzada de bases de datos (PostgreSQL con pgvector, SQL Server, BigQuery) y optimización financiera (<strong>FinOps con 28% de reducción sostenida en GCP</strong>). Cuento con <strong>certificaciones profesionales verificadas en Credly</strong> emitidas por IBM, Meta, Google y Microsoft, y participación activa como desarrollador en hackathons desde 2022 (Aleph, Avalanche LatAm, PunaTech, NASA Space Apps)."
+      "Soy <strong>Guillermo Fernando Farfan Romero</strong>, Senior Cloud Solutions Architect, Infrastructure Specialist & Tech Lead con <strong>más de 8 años de experiencia</strong> en diseño de arquitecturas de misión crítica, ingeniería de datos y microservicios backend. Actualmente curso la <strong>Tecnicatura Universitaria en Sistemas de Información</strong> en la Universidad Tecnológica Nacional (UTN) y cuento con estudios universitarios avanzados en Relaciones del Trabajo por la Universidad de Buenos Aires (UBA).",
+      "Mi especialización abarca <strong>arquitectura multi-cloud, virtualización enterprise y automatización IaC</strong>: diseño de Landing Zones y despliegues en Google Cloud Platform y Microsoft Azure con Terraform, migraciones de cargas críticas (M4CE, Veeam Backup & Replication), clústeres de alta disponibilidad en Microsoft Hyper-V y entornos Linux/Windows (SLES, RHEL, Windows Server) sobre almacenamiento SAN Fibre Channel, orquestación en Kubernetes (GKE Autopilot) con ArgoCD y observabilidad full-stack con OpenTelemetry, IBM Instana APM, Zabbix, Prometheus y Grafana.",
+      "En el área de backend y datos, desarrollo microservicios asíncronos de alta concurrencia con <strong>Python (FastAPI, Celery, SQLAlchemy 2.0, Redis)</strong>, Java (Spring Boot) y TypeScript, administración avanzada de bases de datos (PostgreSQL con pgvector, SQL Server AlwaysOn, BigQuery e infraestructura IaaS para entornos SAP HANA) y optimización financiera (<strong>FinOps con 28% de reducción sostenida en GCP</strong>). Cuento con <strong>certificaciones profesionales verificadas en Credly</strong> emitidas por IBM, Meta, Google y Microsoft, y participación activa como desarrollador en hackathons desde 2022 (Aleph, Avalanche LatAm, PunaTech, NASA Space Apps)."
     ],
     experience: [
       {
@@ -55,11 +55,11 @@ export const content = {
         tags: ["Python", "FastAPI", "GCP", "GKE Autopilot", "Cloud Run", "Terraform", "ArgoCD", "Docker", "Redis", "PostgreSQL", "FinOps", "Celery"]
       },
       {
-        role: "Senior Cloud Architect & Software Consultant",
-        company: "Consultoría Independiente & Proyectos Enterprise",
+        role: "Senior Cloud Architect, Infrastructure & Software Consultant",
+        company: "Consultoría Independiente & Proyectos Enterprise (Bajo NDA)",
         period: "Enero 2021 - Actualidad",
-        description: "Consultoría de arquitectura cloud, automatización con Terraform (IaC), bases de datos de alta disponibilidad e ingeniería de software backend para clientes corporativos, fintech e industriales bajo estrictos acuerdos de confidencialidad (NDA). Desarrollo de middleware de alta concurrencia con Python (FastAPI, Celery, SQLAlchemy 2.0, Redis), microservicios en Java 17 (Spring Boot) sobre GCP y APIs RESTful de baja latencia con Django REST Framework.",
-        tags: ["GCP", "Terraform", "Python", "FastAPI", "Java Spring Boot", "PostgreSQL", "SQL Server", "Docker", "Kubernetes", "Redis"]
+        description: "Consultoría de arquitectura multi-cloud (GCP y Azure), virtualización enterprise, automatización con Terraform (IaC), bases de datos de alta disponibilidad e ingeniería backend bajo estrictos acuerdos de confidencialidad (NDA). Diseño de Landing Zones (Shared VPC, Cloud NAT, IAP, GKE), migración de servidores corporativos e infraestructura IaaS de alta disponibilidad sobre Linux (SLES, RHEL) y Windows Server, clústeres de virtualización Hyper-V / VMware con almacenamiento SAN Fibre Channel y resguardo con Veeam VBR, observabilidad distribuida (OpenTelemetry, APM, Prometheus/Grafana) y desarrollo de microservicios asíncronos con Python (FastAPI, Celery, SQLAlchemy 2.0, Redis) y Java 17 (Spring Boot).",
+        tags: ["GCP", "Azure", "Terraform", "Hyper-V", "GKE", "SLES / RHEL", "SAN FC", "Veeam VBR", "OpenTelemetry", "Python FastAPI", "Java Spring Boot", "SQL Server", "PostgreSQL"]
       },
       {
         role: "Senior Software Engineer & Database Administrator (DBA)",
@@ -245,17 +245,18 @@ export const content = {
     certBadge: "24+ Certificaciones Profesionales (11 Verificables en Credly)",
     skills: [
       {
-        category: "Cloud & Infraestructura",
+        category: "Cloud, Virtualización & Infra",
         icon: "☁️",
         items: [
           "Google Cloud Platform (GCP)",
           "Microsoft Azure",
           "Terraform (IaC) & Terragrunt",
           "Kubernetes (GKE Autopilot)",
-          "Cloud Run & Serverless",
-          "VPC, Cloud NAT & Cloud IAP",
-          "Docker & Multi-Stage Builds",
-          "Linux (Debian/Ubuntu/RHEL) & Windows Server"
+          "Microsoft Hyper-V & Failover Clustering",
+          "VMware vSphere / ESXi & Nutanix AHV",
+          "Migrate to VMs (M4CE) & Veeam VBR",
+          "Shared VPC, Cloud NAT & Cloud IAP",
+          "Docker & Multi-Stage Builds"
         ]
       },
       {
@@ -278,20 +279,20 @@ export const content = {
         items: [
           "PostgreSQL (pgvector, Particionamiento)",
           "Microsoft SQL Server (AlwaysOn HA)",
+          "Infraestructura IaaS para SAP HANA",
           "Google BigQuery & Lakehouse",
           "Redis (Caché distribuida, Pub/Sub)",
           "MySQL, MariaDB & MongoDB",
           "Alembic (Zero-Downtime Migrations)",
-          "Performance Tuning (p95 -55%)",
-          "Pipelines ETL & Data Engineering"
+          "Performance Tuning (p95 -55%)"
         ]
       },
       {
         category: "DevOps, SRE & Observabilidad",
         icon: "📡",
         items: [
-          "OpenTelemetry (OTel)",
-          "Prometheus & Grafana",
+          "OpenTelemetry (OTel) & IBM Instana APM",
+          "Prometheus, Grafana & Zabbix",
           "GitHub Actions & GitLab CI",
           "ArgoCD (GitOps)",
           "FinOps (Optimización de Costos Cloud)",
@@ -301,17 +302,17 @@ export const content = {
         ]
       },
       {
-        category: "Arquitectura & Liderazgo",
+        category: "Almacenamiento, Redes & OS",
         icon: "🏢",
         items: [
-          "Event-Driven Architecture (EDA)",
-          "Microservicios & Sistemas Distribuidos",
-          "Dead Letter Queues (DLQ) & Resiliencia",
-          "Alta Disponibilidad (SLA 99.9%)",
-          "Planes DRP / BCP (RPO < 15m)",
-          "Liderazgo Técnico & Mentoría",
-          "Scrum & Metodologías Ágiles",
-          "Code Reviews & Estándares de Ingeniería"
+          "Almacenamiento SAN Fibre Channel (MPIO / CSV)",
+          "Switch Embedded Teaming (SET) & Live Migration",
+          "SUSE Linux (SLES for SAP) & Red Hat (RHEL)",
+          "Ubuntu / Debian & Windows Server (AD)",
+          "Alta Disponibilidad (SLA 99.9%) & DRP/BCP",
+          "Gestión de DNS/DHCP (Infoblox) & Redes Híbridas",
+          "Hardening de Seguridad & Auditoría",
+          "Liderazgo Técnico & Metodologías Ágiles"
         ]
       },
       {
@@ -412,17 +413,17 @@ export const content = {
     },
     profile: {
       name: "Guillermo Fernando Farfan Romero",
-      role: "Senior Cloud Architect & Software Engineer | Tech Lead | GCP, Kubernetes, Python & Terraform",
+      role: "Senior Cloud Architect & Software Engineer | Tech Lead | GCP, Azure, Virtualization, Python & Terraform",
       typingRoles: [
         "Senior Cloud Solutions Architect",
         "Technical Lead",
+        "Cloud & Virtualization Specialist",
         "Senior Python Backend Engineer",
-        "DevOps & FinOps Specialist",
         "DBA & Data Infrastructure Lead"
       ],
       avatarUrl: "https://github.com/Fernandofarfan.png",
       githubUsername: "Fernandofarfan",
-      description: "Senior Cloud Solutions Architect, Backend Engineer & Tech Lead with over 8 years of experience designing resilient cloud-native architectures on Google Cloud Platform (GCP), Terraform (IaC) automation, high-availability databases, and high-concurrency asynchronous backend microservices in Python (FastAPI). Combining Information Systems (UTN) with Labor Relations (UBA) to lead engineering teams with technical rigor and business focus.",
+      description: "Senior Cloud Solutions Architect, Infrastructure Specialist & Tech Lead with over 8 years of experience designing resilient cloud-native and hybrid architectures on Google Cloud Platform (GCP) and Microsoft Azure, enterprise virtualization (Hyper-V, VMware vSphere, Nutanix AHV), Terraform (IaC) automation, high-availability databases, and high-concurrency asynchronous backend microservices in Python (FastAPI). Combining Information Systems (UTN) with Labor Relations (UBA) to lead engineering teams with technical rigor and business focus.",
       email: "fernando.farfan16@gmail.com",
       location: "Salta / Buenos Aires, Argentina (UTC-3 · Remote / Relocation)",
       status: "Available for work",
@@ -440,9 +441,9 @@ export const content = {
       cvLinkEn: "/CV/Guillermo_Farfan_CV_EN.pdf"
     },
     about: [
-      "I am <strong>Guillermo Fernando Farfan Romero</strong>, a Senior Cloud Solutions Architect, Backend Engineer & Tech Lead with <strong>over 8 years of experience</strong> designing mission-critical architectures, data infrastructure, and backend microservices. I am currently pursuing a <strong>University Technician degree in Information Systems</strong> at the National Technological University (UTN) and hold advanced university coursework in Labor Relations from the University of Buenos Aires (UBA).",
-      "My specialization covers <strong>cloud-native architecture, IaC automation, and distributed platforms</strong>: designing scalable infrastructures on Google Cloud Platform with Terraform, container orchestration on Kubernetes (GKE Autopilot) and Cloud Run via GitOps pipelines (GitHub Actions and ArgoCD), and full-stack distributed observability with OpenTelemetry, Prometheus, and Grafana ensuring 99.9% SLA.",
-      "In backend and data engineering, I design high-concurrency asynchronous microservices with <strong>Python (FastAPI, Celery, SQLAlchemy 2.0, Redis)</strong>, Java (Spring Boot), and TypeScript, alongside advanced database administration (PostgreSQL with pgvector, SQL Server, BigQuery) and cloud cost governance (<strong>FinOps delivering 28% sustained savings in GCP</strong>). I hold <strong>professional certifications verified on Credly</strong> from IBM, Meta, Google, and Microsoft, and actively participate as a developer in international hackathons since 2022 (Aleph, Avalanche LatAm, PunaTech, NASA Space Apps)."
+      "I am <strong>Guillermo Fernando Farfan Romero</strong>, a Senior Cloud Solutions Architect, Infrastructure Specialist & Tech Lead with <strong>over 8 years of experience</strong> designing mission-critical architectures, data infrastructure, and backend microservices. I am currently pursuing a <strong>University Technician degree in Information Systems</strong> at the National Technological University (UTN) and hold advanced university coursework in Labor Relations from the University of Buenos Aires (UBA).",
+      "My specialization covers <strong>multi-cloud architecture, enterprise virtualization, and IaC automation</strong>: designing Landing Zones and cloud deployments on Google Cloud Platform and Microsoft Azure with Terraform, workload migrations (M4CE, Veeam Backup & Replication), high-availability clusters on Microsoft Hyper-V and Linux/Windows environments (SLES, RHEL, Windows Server) backed by Fibre Channel SAN storage, container orchestration on Kubernetes (GKE Autopilot) with ArgoCD, and full-stack observability with OpenTelemetry, IBM Instana APM, Zabbix, Prometheus, and Grafana.",
+      "In backend and data engineering, I design high-concurrency asynchronous microservices with <strong>Python (FastAPI, Celery, SQLAlchemy 2.0, Redis)</strong>, Java (Spring Boot), and TypeScript, alongside advanced database administration (PostgreSQL with pgvector, SQL Server AlwaysOn, BigQuery, and IaaS infrastructure for SAP HANA environments) and cloud cost governance (<strong>FinOps delivering 28% sustained savings in GCP</strong>). I hold <strong>professional certifications verified on Credly</strong> from IBM, Meta, Google, and Microsoft, and actively participate as a developer in international hackathons since 2022 (Aleph, Avalanche LatAm, PunaTech, NASA Space Apps)."
     ],
     experience: [
       {
@@ -453,11 +454,11 @@ export const content = {
         tags: ["Python", "FastAPI", "GCP", "GKE Autopilot", "Cloud Run", "Terraform", "ArgoCD", "Docker", "Redis", "PostgreSQL", "FinOps", "Celery"]
       },
       {
-        role: "Senior Cloud Architect & Software Consultant",
-        company: "Independent Consulting & Enterprise Projects",
+        role: "Senior Cloud Architect, Infrastructure & Software Consultant",
+        company: "Independent Consulting & Enterprise Projects (Under NDA)",
         period: "January 2021 - Present",
-        description: "Cloud architecture, Terraform (IaC) automation, high-availability databases, and backend software engineering consulting for corporate, fintech, and industrial clients under strict non-disclosure agreements (NDA). Designed high-concurrency middleware in Python (FastAPI, Celery, SQLAlchemy 2.0, Redis), Java 17 (Spring Boot) microservices on GCP, and low-latency RESTful APIs with Django REST Framework.",
-        tags: ["GCP", "Terraform", "Python", "FastAPI", "Java Spring Boot", "PostgreSQL", "SQL Server", "Docker", "Kubernetes", "Redis"]
+        description: "Multi-cloud architecture (GCP and Azure), enterprise virtualization, Terraform (IaC) automation, high-availability databases, and backend software engineering consulting under strict non-disclosure agreements (NDA). Designed Landing Zones (Shared VPC, Cloud NAT, IAP, GKE), corporate server migrations and high-availability IaaS infrastructure on Linux (SLES, RHEL) and Windows Server, Hyper-V / VMware virtualization clusters with Fibre Channel SAN storage and Veeam VBR backups, distributed observability (OpenTelemetry, APM, Prometheus/Grafana), and high-concurrency asynchronous microservices in Python (FastAPI, Celery, SQLAlchemy 2.0, Redis) and Java 17 (Spring Boot).",
+        tags: ["GCP", "Azure", "Terraform", "Hyper-V", "GKE", "SLES / RHEL", "SAN FC", "Veeam VBR", "OpenTelemetry", "Python FastAPI", "Java Spring Boot", "SQL Server", "PostgreSQL"]
       },
       {
         role: "Senior Software Engineer & Database Administrator (DBA)",
@@ -643,17 +644,18 @@ export const content = {
     certBadge: "24+ Professional Certifications (11 Verified on Credly)",
     skills: [
       {
-        category: "Cloud & Infrastructure",
+        category: "Cloud, Virtualization & Infra",
         icon: "☁️",
         items: [
           "Google Cloud Platform (GCP)",
           "Microsoft Azure",
           "Terraform (IaC) & Terragrunt",
           "Kubernetes (GKE Autopilot)",
-          "Cloud Run & Serverless",
-          "VPC, Cloud NAT & Cloud IAP",
-          "Docker & Multi-Stage Builds",
-          "Linux (Debian/Ubuntu/RHEL) & Windows Server"
+          "Microsoft Hyper-V & Failover Clustering",
+          "VMware vSphere / ESXi & Nutanix AHV",
+          "Migrate to VMs (M4CE) & Veeam VBR",
+          "Shared VPC, Cloud NAT & Cloud IAP",
+          "Docker & Multi-Stage Builds"
         ]
       },
       {
@@ -676,20 +678,20 @@ export const content = {
         items: [
           "PostgreSQL (pgvector, Partitioning)",
           "Microsoft SQL Server (AlwaysOn HA)",
+          "SAP HANA IaaS Infrastructure",
           "Google BigQuery & Lakehouse",
           "Redis (Distributed Cache, Pub/Sub)",
           "MySQL, MariaDB & MongoDB",
           "Alembic (Zero-Downtime Migrations)",
-          "Performance Tuning (p95 -55%)",
-          "ETL Pipelines & Data Engineering"
+          "Performance Tuning (p95 -55%)"
         ]
       },
       {
         category: "DevOps, SRE & Observability",
         icon: "📡",
         items: [
-          "OpenTelemetry (OTel)",
-          "Prometheus & Grafana",
+          "OpenTelemetry (OTel) & IBM Instana APM",
+          "Prometheus, Grafana & Zabbix",
           "GitHub Actions & GitLab CI",
           "ArgoCD (GitOps)",
           "FinOps (Cloud Cost Optimization)",
@@ -699,17 +701,17 @@ export const content = {
         ]
       },
       {
-        category: "Architecture & Leadership",
+        category: "Storage, Networking & OS",
         icon: "🏢",
         items: [
-          "Event-Driven Architecture (EDA)",
-          "Microservices & Distributed Systems",
-          "Dead Letter Queues (DLQ) & Resilience",
-          "High Availability (99.9% SLA)",
-          "DRP / BCP Planning (RPO < 15m)",
-          "Technical Leadership & Mentorship",
-          "Scrum & Agile Methodologies",
-          "Code Reviews & Engineering Standards"
+          "Fibre Channel SAN Storage (MPIO / CSV)",
+          "Switch Embedded Teaming (SET) & Live Migration",
+          "SUSE Linux (SLES for SAP) & Red Hat (RHEL)",
+          "Ubuntu / Debian & Windows Server (AD)",
+          "High Availability (99.9% SLA) & DRP/BCP",
+          "DNS/DHCP Management (Infoblox) & Hybrid Networks",
+          "Security Hardening & Auditing",
+          "Technical Leadership & Agile Methodologies"
         ]
       },
       {
