@@ -175,7 +175,7 @@ export const content = {
         featured: true
       },
       {
-        title: "IBM JavaScript Backend Developer (V2)",
+        title: "IBM Back-End JavaScript Developer",
         date: "Diciembre 2023",
         id: "7ZT98PBD1XAR",
         url: "https://www.coursera.org/account/accomplishments/specialization/7ZT98PBD1XAR",
@@ -214,21 +214,28 @@ export const content = {
         skills: "GCP, Compute Engine, GKE, VPC, Cloud Storage"
       },
       {
-        title: "IBM Security for Professionals and DevOps",
+        title: "IBM Back-End Development",
         date: "Octubre 2023",
         id: "PA0KVDG6VGPZ",
-        url: "https://www.credly.com/users/fernando-farfan.855a5067/badges",
-        skills: "DevSecOps, App Security, IAM, Vulnerability Scanning"
+        url: "https://coursera.org/verify/professional-cert/PA0KVDG6VGPZ",
+        skills: "Node.js, Express, MongoDB, REST APIs, Microservices"
       },
       {
-        title: "IBM IT Scrum Master Specialization",
+        title: "IBM Front-End Developer",
+        date: "Octubre 2023",
+        id: "W3JHUWJ3KJRY",
+        url: "https://coursera.org/verify/professional-cert/W3JHUWJ3KJRY",
+        skills: "React, JavaScript, HTML, CSS, UX"
+      },
+      {
+        title: "IBM IT Scrum Master",
         date: "Julio 2024",
         id: "9HBDHURRLKZM",
         url: "https://coursera.org/verify/professional-cert/9HBDHURRLKZM",
         skills: "Scrum, Agile Leadership, Sprints, DevOps"
       },
       {
-        title: "Oracle Next Education Back-End",
+        title: "Programa Oracle Next Education F2 T5 Back-end",
         date: "Febrero 2023",
         id: "99565610-8083-4f93-a8c3-0767db0e30a8",
         url: "https://app.aluracursos.com/program/certificate/99565610-8083-4f93-a8c3-0767db0e30a8",
@@ -240,9 +247,39 @@ export const content = {
         id: "2UYKMBUZ79HJ",
         url: "https://coursera.org/verify/specialization/2UYKMBUZ79HJ",
         skills: "React, .NET Framework, ASP.NET"
+      },
+      {
+        title: "Fundamentos profesionales en ciberseguridad, por Microsoft y LinkedIn",
+        date: "Abril 2021",
+        skills: "Ciberseguridad, IAM, Gestión de riesgos"
+      },
+      {
+        title: "Conviértete en desarrollador web full-stack",
+        date: "Julio 2022",
+        skills: "JavaScript, Node.js, React, Full Stack"
+      },
+      {
+        title: "Conviértete en desarrollador web front-end",
+        date: "Septiembre 2020",
+        skills: "HTML, CSS, JavaScript, React"
+      },
+      {
+        title: "Fundamentos profesionales del desarrollo de software, por Microsoft y LinkedIn",
+        date: "Marzo 2022",
+        skills: "Desarrollo de software, POO, Git"
+      },
+      {
+        title: "Fundamentos de la carrera de administración de sistemas de Microsoft y LinkedIn",
+        date: "Febrero 2021",
+        skills: "Administración de sistemas, Redes, Windows Server"
+      },
+      {
+        title: "Fundamentos profesionales del análisis de datos, por Microsoft y LinkedIn",
+        date: "Septiembre 2021",
+        skills: "Análisis de datos, SQL, Excel"
       }
     ],
-    certBadge: "24+ Certificaciones Profesionales (11 Verificables en Credly)",
+    certBadge: "19 Certificaciones Profesionales (Verificables en Credly y Coursera)",
     skills: [
       {
         category: "Cloud, Virtualización & Infra",
@@ -574,7 +611,7 @@ export const content = {
         featured: true
       },
       {
-        title: "IBM JavaScript Backend Developer (V2)",
+        title: "IBM Back-End JavaScript Developer",
         date: "December 2023",
         id: "7ZT98PBD1XAR",
         url: "https://www.coursera.org/account/accomplishments/specialization/7ZT98PBD1XAR",
@@ -613,21 +650,28 @@ export const content = {
         skills: "GCP, Compute Engine, GKE, VPC, Cloud Storage"
       },
       {
-        title: "IBM Security for Professionals and DevOps",
+        title: "IBM Back-End Development",
         date: "October 2023",
         id: "PA0KVDG6VGPZ",
-        url: "https://www.credly.com/users/fernando-farfan.855a5067/badges",
-        skills: "DevSecOps, App Security, IAM, Vulnerability Scanning"
+        url: "https://coursera.org/verify/professional-cert/PA0KVDG6VGPZ",
+        skills: "Node.js, Express, MongoDB, REST APIs, Microservices"
       },
       {
-        title: "IBM IT Scrum Master Specialization",
+        title: "IBM Front-End Developer",
+        date: "October 2023",
+        id: "W3JHUWJ3KJRY",
+        url: "https://coursera.org/verify/professional-cert/W3JHUWJ3KJRY",
+        skills: "React, JavaScript, HTML, CSS, UX"
+      },
+      {
+        title: "IBM IT Scrum Master",
         date: "July 2024",
         id: "9HBDHURRLKZM",
         url: "https://coursera.org/verify/professional-cert/9HBDHURRLKZM",
         skills: "Scrum, Agile Leadership, Sprints, DevOps"
       },
       {
-        title: "Oracle Next Education Back-End",
+        title: "Programa Oracle Next Education F2 T5 Back-end",
         date: "February 2023",
         id: "99565610-8083-4f93-a8c3-0767db0e30a8",
         url: "https://app.aluracursos.com/program/certificate/99565610-8083-4f93-a8c3-0767db0e30a8",
@@ -639,9 +683,39 @@ export const content = {
         id: "2UYKMBUZ79HJ",
         url: "https://coursera.org/verify/specialization/2UYKMBUZ79HJ",
         skills: "React, .NET Framework, ASP.NET"
+      },
+      {
+        title: "Cybersecurity Fundamentals, by Microsoft and LinkedIn",
+        date: "April 2021",
+        skills: "Cybersecurity, IAM, Risk Management"
+      },
+      {
+        title: "Become a Full-Stack Web Developer",
+        date: "July 2022",
+        skills: "JavaScript, Node.js, React, Full Stack"
+      },
+      {
+        title: "Become a Front-End Web Developer",
+        date: "September 2020",
+        skills: "HTML, CSS, JavaScript, React"
+      },
+      {
+        title: "Software Development Fundamentals, by Microsoft and LinkedIn",
+        date: "March 2022",
+        skills: "Software Development, OOP, Git"
+      },
+      {
+        title: "Microsoft and LinkedIn Systems Administration Career Fundamentals",
+        date: "February 2021",
+        skills: "Systems Administration, Networking, Windows Server"
+      },
+      {
+        title: "Data Analysis Fundamentals, by Microsoft and LinkedIn",
+        date: "September 2021",
+        skills: "Data Analysis, SQL, Excel"
       }
     ],
-    certBadge: "24+ Professional Certifications (11 Verified on Credly)",
+    certBadge: "19 Professional Certifications (Verifiable on Credly & Coursera)",
     skills: [
       {
         category: "Cloud, Virtualization & Infra",
