@@ -29,5 +29,5 @@ fernando-portfolio/
 
 ## 📄 CVs Disponibles
 El sitio incluye descarga automática de CV en dos idiomas:
-- **Español**: `/public/CV_Guillermo_Farfan_ES.pdf`
-- **Inglés**: `/public/CV_Guillermo_Farfan_EN.pdf`
+- **Español**: `/public/CV/Guillermo_Farfan_CV.pdf`
+- **Inglés**: `/public/CV/Guillermo_Farfan_CV_EN.pdf`

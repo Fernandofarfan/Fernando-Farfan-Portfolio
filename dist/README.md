@@ -5,11 +5,11 @@
 ### 1. Prepara tus archivos PDF
 - Asegúrate de tener tus CVs actualizados.
 - Renombra los archivos siguiendo este esquema:
-  - Español: **`CV_Guillermo_Farfan_ES.pdf`**
-  - Inglés: **`CV_Guillermo_Farfan_EN.pdf`**
+  - Español: **`Guillermo_Farfan_CV.pdf`**
+  - Inglés: **`Guillermo_Farfan_CV_EN.pdf`**
 
-### 2. Coloca los archivos en la carpeta `public`
-Copia ambos archivos a la carpeta `public/` de este proyecto.
+### 2. Coloca los archivos en la carpeta `public/CV`
+Copia ambos archivos a la carpeta `public/CV/` de este proyecto.
 
 ### 3. Sincroniza y Despliega
 Para que los cambios se vean en vivo, ejecuta:
@@ -26,8 +26,10 @@ npm run deploy
 ```
 Fernando-Farfan-Portfolio/
 ├── public/
-│   ├── CV_Guillermo_Farfan_ES.pdf  ← Versión Español
-│   ├── CV_Guillermo_Farfan_EN.pdf  ← Versión Inglés
+│   ├── CV/
+│   │   ├── Guillermo_Farfan_CV.pdf     ← Versión Español
+│   │   ├── Guillermo_Farfan_CV_EN.pdf  ← Versión Inglés
+│   │   └── (12 CVs por especialidad, ES/EN)
 │   └── favicon.svg
 ├── src/
 │   └── data.js  ← (Aquí se configuran los links de descarga)
