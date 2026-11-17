@@ -14,7 +14,7 @@ export const content = {
     },
     profile: {
       name: "Guillermo Fernando Farfan Romero",
-      role: "Senior Cloud Architect & Software Engineer | Tech Lead | GCP, Azure, Virtualization, Python & Terraform",
+      role: "Senior Cloud Architect & Software Engineer | Tech Lead | GCP, Azure, Hyper-V, Kubernetes & Terraform | Python (FastAPI), PostgreSQL & SQL Server | FinOps, Observability (OpenTelemetry / APM) & High Availability",
       typingRoles: [
         "Senior Cloud Solutions Architect",
         "Technical Lead",
@@ -24,14 +24,14 @@ export const content = {
       ],
       avatarUrl: "https://github.com/Fernandofarfan.png",
       githubUsername: "Fernandofarfan",
-      description: "Senior Cloud Solutions Architect, Infrastructure Specialist & Tech Lead con más de 8 años de experiencia diseñando arquitecturas cloud-native e híbridas en Google Cloud Platform (GCP) y Microsoft Azure, virtualización enterprise (Hyper-V, VMware vSphere, Nutanix AHV), automatización con Terraform (IaC), bases de datos de alta disponibilidad y microservicios asíncronos en Python (FastAPI). Combino formación en Sistemas (UTN) y Relaciones del Trabajo (UBA) para dirigir equipos de ingeniería alineando excelencia técnica, cultura ágil y objetivos de negocio.",
+      description: "Senior Cloud Solutions Architect, Infrastructure Specialist & Tech Lead con más de 8 años de experiencia diseñando arquitecturas cloud-native e híbridas en Google Cloud Platform (GCP) y Microsoft Azure, virtualización enterprise (Hyper-V, VMware vSphere, Nutanix AHV), automatización con Terraform (IaC), bases de datos de alta disponibilidad y microservicios asíncronos en Python (FastAPI). Combino formación en Sistemas (UTN) y Relaciones del Trabajo (UBA) para dirigir equipos de ingeniería (6+ devs) alineando excelencia técnica, cultura ágil y objetivos de negocio.",
       email: "fernando.farfan16@gmail.com",
       location: "Salta / Buenos Aires, Argentina (UTC-3 · Remoto / Relocalización)",
       status: "Disponible para trabajar",
       downloadCvEs: "Descargar CV (ES)",
       downloadCvEn: "Download CV (EN)",
       yearsExp: "+8",
-      certCount: "24+",
+      certCount: "19",
       social: {
         github: "https://github.com/Fernandofarfan",
         linkedin: "https://www.linkedin.com/in/guillermo-farfan",
@@ -413,7 +413,7 @@ export const content = {
     },
     profile: {
       name: "Guillermo Fernando Farfan Romero",
-      role: "Senior Cloud Architect & Software Engineer | Tech Lead | GCP, Azure, Virtualization, Python & Terraform",
+      role: "Senior Cloud Architect & Software Engineer | Tech Lead | GCP, Azure, Hyper-V, Kubernetes & Terraform | Python (FastAPI), PostgreSQL & SQL Server | FinOps, Observability (OpenTelemetry / APM) & High Availability",
       typingRoles: [
         "Senior Cloud Solutions Architect",
         "Technical Lead",
@@ -423,14 +423,14 @@ export const content = {
       ],
       avatarUrl: "https://github.com/Fernandofarfan.png",
       githubUsername: "Fernandofarfan",
-      description: "Senior Cloud Solutions Architect, Infrastructure Specialist & Tech Lead with over 8 years of experience designing resilient cloud-native and hybrid architectures on Google Cloud Platform (GCP) and Microsoft Azure, enterprise virtualization (Hyper-V, VMware vSphere, Nutanix AHV), Terraform (IaC) automation, high-availability databases, and high-concurrency asynchronous backend microservices in Python (FastAPI). Combining Information Systems (UTN) with Labor Relations (UBA) to lead engineering teams with technical rigor and business focus.",
+      description: "Senior Cloud Solutions Architect, Infrastructure Specialist & Tech Lead with over 8 years of experience designing resilient cloud-native and hybrid architectures on Google Cloud Platform (GCP) and Microsoft Azure, enterprise virtualization (Hyper-V, VMware vSphere, Nutanix AHV), Terraform (IaC) automation, high-availability databases, and high-concurrency asynchronous backend microservices in Python (FastAPI). Combining Information Systems (UTN) with Labor Relations (UBA) to lead engineering teams (6+ devs) with technical rigor and business focus.",
       email: "fernando.farfan16@gmail.com",
       location: "Salta / Buenos Aires, Argentina (UTC-3 · Remote / Relocation)",
       status: "Available for work",
       downloadCvEs: "Descargar CV (ES)",
       downloadCvEn: "Download CV (EN)",
       yearsExp: "+8",
-      certCount: "24+",
+      certCount: "19",
       social: {
         github: "https://github.com/Fernandofarfan",
         linkedin: "https://www.linkedin.com/in/guillermo-farfan",
